@@ -2,7 +2,7 @@
 using ConsoleApp1;
 using ConsoleApp1.Content;
 
-var fileName = "test.c2022v2";
+var fileName = "Content\\test.c2022v2";
 var fileContents = File.ReadAllText(fileName);
 
 var inputStream = new AntlrInputStream(fileContents);

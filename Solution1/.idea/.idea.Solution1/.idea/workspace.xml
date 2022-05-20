@@ -7,25 +7,23 @@
     <list default="true" id="7a71278d-1cd7-486a-93e7-b09a716d6e25" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/ConsoleApp1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/ConsoleApp1.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Content/Simple.g4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Content/c2022v2.g4" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Content/c2022v2.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/c2022v2Visitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/c2022v2Visitor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.Antlr4GeneratedCodeFileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.Antlr4GeneratedCodeFileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/Simple.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/SimpleBaseListener.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/SimpleBaseVisitor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/SimpleLexer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/SimpleLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/SimpleListener.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/SimpleParser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/SimpleVisitor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Lexer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Lexer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Lexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Lexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Parser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/refint/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/refint/ConsoleApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/test.c2022v2" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Content/test.c2022v2" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +31,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f3b9684f72bc2cc435eb694f7cc86eca8c240d2d1cefa1e8697a61f1f2f27f/SafeFileHandle.Windows.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -85,6 +84,8 @@
       <updated>1653023113611</updated>
       <workItem from="1653023118882" duration="235000" />
       <workItem from="1653029894573" duration="3566000" />
+      <workItem from="1653033488614" duration="1494000" />
+      <workItem from="1653035006703" duration="166000" />
     </task>
     <task id="LOCAL−00001" summary="new">
       <created>1653023147518</created>
@@ -104,7 +105,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1653031385198</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary=".">
+      <created>1653033664149</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1653033664149</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,7 +124,8 @@
     <MESSAGE value="new" />
     <MESSAGE value="simple g4" />
     <MESSAGE value="start gramma" />
-    <option name="LAST_COMMIT_MESSAGE" value="start gramma" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -127,13 +135,13 @@
           <line>15</line>
           <properties documentPath="D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\c2022v2Visitor.cs" initialLine="15" containingFunctionPresentation="method 'VisitAssignment'">
             <startOffsets>
-              <option value="426" />
+              <option value="429" />
             </startOffsets>
             <endOffsets>
-              <option value="438" />
+              <option value="441" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

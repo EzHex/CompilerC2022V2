@@ -39,5 +39,11 @@ comp: '==' | '!=' | '>' | '<' | '<=' | '>=';
 
 constant: INTEGER | DOUBLE | CHAR | BOOL | NULL;
 
+INTEGER: [0-9]+;
+DOUBLE: [0-9]+ '.' [0-9]+;
+CHAR: [a-zA-Z];
+BOOL: 'true' | 'false';
+NULL: 'null';
+
 IDENTIFIER: [a-zA-Z_][a-zA-Z0-9]*;
 WS: [\t\r\n]+ -> skip;

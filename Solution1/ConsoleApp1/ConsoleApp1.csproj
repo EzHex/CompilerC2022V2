@@ -24,4 +24,10 @@
       <Content Include="Content\c2022v2.g4" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="Content\test.c2022v2">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
