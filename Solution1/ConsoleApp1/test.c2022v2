@@ -1,0 +1,27 @@
+﻿main;
+int a = 1;
+int v = 51;
+bind(a,v);
+a += 10;
+printf(a); // 11
+printf(v); // 61
+unbind(a);
+a += 4;
+printf(a); // 15
+printf(v); // 61
+int k = 0;
+for (i = 0; i < v; i++)
+k+=3;
+forend;
+if (a < 5)
+printf(a);
+elseif (a == 5)
+printf(5);
+else
+printf(a*a);
+ifend;
+while (a > 0)
+printf(a)
+a--;
+endwhile;
+printf(k);

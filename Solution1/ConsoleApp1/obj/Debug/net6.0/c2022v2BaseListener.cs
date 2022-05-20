@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\Simple.g4 by ANTLR 4.6.6
+// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -28,233 +28,220 @@ using IToken = Antlr4.Runtime.IToken;
 using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 
 /// <summary>
-/// This class provides an empty implementation of <see cref="ISimpleListener"/>,
+/// This class provides an empty implementation of <see cref="Ic2022v2Listener"/>,
 /// which can be extended to create a listener which only needs to handle a subset
 /// of the available methods.
 /// </summary>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.6.6")]
 [System.CLSCompliant(false)]
-public partial class SimpleBaseListener : ISimpleListener {
+public partial class c2022v2BaseListener : Ic2022v2Listener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.program"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.program"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterProgram([NotNull] SimpleParser.ProgramContext context) { }
+	public virtual void EnterProgram([NotNull] c2022v2Parser.ProgramContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.program"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.program"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitProgram([NotNull] SimpleParser.ProgramContext context) { }
+	public virtual void ExitProgram([NotNull] c2022v2Parser.ProgramContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.line"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.line"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterLine([NotNull] SimpleParser.LineContext context) { }
+	public virtual void EnterLine([NotNull] c2022v2Parser.LineContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.line"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.line"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitLine([NotNull] SimpleParser.LineContext context) { }
+	public virtual void ExitLine([NotNull] c2022v2Parser.LineContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.statement"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.statement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterStatement([NotNull] SimpleParser.StatementContext context) { }
+	public virtual void EnterStatement([NotNull] c2022v2Parser.StatementContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.statement"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.statement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitStatement([NotNull] SimpleParser.StatementContext context) { }
+	public virtual void ExitStatement([NotNull] c2022v2Parser.StatementContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.ifBlock"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.assignment"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterIfBlock([NotNull] SimpleParser.IfBlockContext context) { }
+	public virtual void EnterAssignment([NotNull] c2022v2Parser.AssignmentContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.ifBlock"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.assignment"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitIfBlock([NotNull] SimpleParser.IfBlockContext context) { }
+	public virtual void ExitAssignment([NotNull] c2022v2Parser.AssignmentContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.elseIfBlock"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.funCall"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterElseIfBlock([NotNull] SimpleParser.ElseIfBlockContext context) { }
+	public virtual void EnterFunCall([NotNull] c2022v2Parser.FunCallContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.elseIfBlock"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.funCall"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitElseIfBlock([NotNull] SimpleParser.ElseIfBlockContext context) { }
+	public virtual void ExitFunCall([NotNull] c2022v2Parser.FunCallContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.forBlock"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.ifBlock"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterForBlock([NotNull] SimpleParser.ForBlockContext context) { }
+	public virtual void EnterIfBlock([NotNull] c2022v2Parser.IfBlockContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.forBlock"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.ifBlock"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitForBlock([NotNull] SimpleParser.ForBlockContext context) { }
+	public virtual void ExitIfBlock([NotNull] c2022v2Parser.IfBlockContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.whileBlock"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.forBlock"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterWhileBlock([NotNull] SimpleParser.WhileBlockContext context) { }
+	public virtual void EnterForBlock([NotNull] c2022v2Parser.ForBlockContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.whileBlock"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.forBlock"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitWhileBlock([NotNull] SimpleParser.WhileBlockContext context) { }
+	public virtual void ExitForBlock([NotNull] c2022v2Parser.ForBlockContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.assignment"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.whileBlock"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterAssignment([NotNull] SimpleParser.AssignmentContext context) { }
+	public virtual void EnterWhileBlock([NotNull] c2022v2Parser.WhileBlockContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.assignment"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.whileBlock"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitAssignment([NotNull] SimpleParser.AssignmentContext context) { }
+	public virtual void ExitWhileBlock([NotNull] c2022v2Parser.WhileBlockContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.funCall"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.block"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterFunCall([NotNull] SimpleParser.FunCallContext context) { }
+	public virtual void EnterBlock([NotNull] c2022v2Parser.BlockContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.funCall"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.block"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitFunCall([NotNull] SimpleParser.FunCallContext context) { }
+	public virtual void ExitBlock([NotNull] c2022v2Parser.BlockContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.expression"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterExpression([NotNull] SimpleParser.ExpressionContext context) { }
+	public virtual void EnterExpression([NotNull] c2022v2Parser.ExpressionContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.expression"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitExpression([NotNull] SimpleParser.ExpressionContext context) { }
+	public virtual void ExitExpression([NotNull] c2022v2Parser.ExpressionContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.mul"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.mul"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterMul([NotNull] SimpleParser.MulContext context) { }
+	public virtual void EnterMul([NotNull] c2022v2Parser.MulContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.mul"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.mul"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitMul([NotNull] SimpleParser.MulContext context) { }
+	public virtual void ExitMul([NotNull] c2022v2Parser.MulContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.div"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.div"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterDiv([NotNull] SimpleParser.DivContext context) { }
+	public virtual void EnterDiv([NotNull] c2022v2Parser.DivContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.div"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.div"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitDiv([NotNull] SimpleParser.DivContext context) { }
+	public virtual void ExitDiv([NotNull] c2022v2Parser.DivContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.add"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.add"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterAdd([NotNull] SimpleParser.AddContext context) { }
+	public virtual void EnterAdd([NotNull] c2022v2Parser.AddContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.add"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.add"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitAdd([NotNull] SimpleParser.AddContext context) { }
+	public virtual void ExitAdd([NotNull] c2022v2Parser.AddContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.sub"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.sub"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSub([NotNull] SimpleParser.SubContext context) { }
+	public virtual void EnterSub([NotNull] c2022v2Parser.SubContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.sub"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.sub"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSub([NotNull] SimpleParser.SubContext context) { }
+	public virtual void ExitSub([NotNull] c2022v2Parser.SubContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.comp"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.comp"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterComp([NotNull] SimpleParser.CompContext context) { }
+	public virtual void EnterComp([NotNull] c2022v2Parser.CompContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.comp"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.comp"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitComp([NotNull] SimpleParser.CompContext context) { }
+	public virtual void ExitComp([NotNull] c2022v2Parser.CompContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.constant"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.constant"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterConstant([NotNull] SimpleParser.ConstantContext context) { }
+	public virtual void EnterConstant([NotNull] c2022v2Parser.ConstantContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.constant"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.constant"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitConstant([NotNull] SimpleParser.ConstantContext context) { }
-
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="SimpleParser.block"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterBlock([NotNull] SimpleParser.BlockContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="SimpleParser.block"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitBlock([NotNull] SimpleParser.BlockContext context) { }
+	public virtual void ExitConstant([NotNull] c2022v2Parser.ConstantContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

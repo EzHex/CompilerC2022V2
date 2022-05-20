@@ -22,7 +22,6 @@
 
     <ItemGroup>
       <Content Include="Content\c2022v2.g4" />
-      <Content Include="Content\Simple.g4" />
     </ItemGroup>
 
 </Project>

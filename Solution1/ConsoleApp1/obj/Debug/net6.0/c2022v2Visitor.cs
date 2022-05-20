@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\Simple.g4 by ANTLR 4.6.6
+// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -26,129 +26,122 @@ using IToken = Antlr4.Runtime.IToken;
 
 /// <summary>
 /// This interface defines a complete generic visitor for a parse tree produced
-/// by <see cref="SimpleParser"/>.
+/// by <see cref="c2022v2Parser"/>.
 /// </summary>
 /// <typeparam name="Result">The return type of the visit operation.</typeparam>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.6.6")]
 [System.CLSCompliant(false)]
-public interface ISimpleVisitor<Result> : IParseTreeVisitor<Result> {
+public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.program"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.program"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitProgram([NotNull] SimpleParser.ProgramContext context);
+	Result VisitProgram([NotNull] c2022v2Parser.ProgramContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.line"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.line"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitLine([NotNull] SimpleParser.LineContext context);
+	Result VisitLine([NotNull] c2022v2Parser.LineContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.statement"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.statement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitStatement([NotNull] SimpleParser.StatementContext context);
+	Result VisitStatement([NotNull] c2022v2Parser.StatementContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.ifBlock"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.assignment"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitIfBlock([NotNull] SimpleParser.IfBlockContext context);
+	Result VisitAssignment([NotNull] c2022v2Parser.AssignmentContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.elseIfBlock"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.funCall"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitElseIfBlock([NotNull] SimpleParser.ElseIfBlockContext context);
+	Result VisitFunCall([NotNull] c2022v2Parser.FunCallContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.forBlock"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.ifBlock"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitForBlock([NotNull] SimpleParser.ForBlockContext context);
+	Result VisitIfBlock([NotNull] c2022v2Parser.IfBlockContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.whileBlock"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.forBlock"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitWhileBlock([NotNull] SimpleParser.WhileBlockContext context);
+	Result VisitForBlock([NotNull] c2022v2Parser.ForBlockContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.assignment"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.whileBlock"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitAssignment([NotNull] SimpleParser.AssignmentContext context);
+	Result VisitWhileBlock([NotNull] c2022v2Parser.WhileBlockContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.funCall"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.block"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitFunCall([NotNull] SimpleParser.FunCallContext context);
+	Result VisitBlock([NotNull] c2022v2Parser.BlockContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.expression"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitExpression([NotNull] SimpleParser.ExpressionContext context);
+	Result VisitExpression([NotNull] c2022v2Parser.ExpressionContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.mul"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.mul"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitMul([NotNull] SimpleParser.MulContext context);
+	Result VisitMul([NotNull] c2022v2Parser.MulContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.div"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.div"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitDiv([NotNull] SimpleParser.DivContext context);
+	Result VisitDiv([NotNull] c2022v2Parser.DivContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.add"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.add"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitAdd([NotNull] SimpleParser.AddContext context);
+	Result VisitAdd([NotNull] c2022v2Parser.AddContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.sub"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.sub"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitSub([NotNull] SimpleParser.SubContext context);
+	Result VisitSub([NotNull] c2022v2Parser.SubContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.comp"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.comp"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitComp([NotNull] SimpleParser.CompContext context);
+	Result VisitComp([NotNull] c2022v2Parser.CompContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.constant"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.constant"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitConstant([NotNull] SimpleParser.ConstantContext context);
-
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="SimpleParser.block"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitBlock([NotNull] SimpleParser.BlockContext context);
+	Result VisitConstant([NotNull] c2022v2Parser.ConstantContext context);
 }
 } // namespace ConsoleApp1.Content
