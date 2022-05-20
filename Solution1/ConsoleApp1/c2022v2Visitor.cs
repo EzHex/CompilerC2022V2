@@ -45,4 +45,14 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     
         throw new NotImplementedException();
     }
+
+    public override object? VisitFunCall(c2022v2Parser.FunCallContext context)
+    {
+        if (context.PRINT() is { } p)
+        {
+            //Console.WriteLine(Visit(context.expression()).ToString());
+        }
+    
+        return null;
+    }
 }

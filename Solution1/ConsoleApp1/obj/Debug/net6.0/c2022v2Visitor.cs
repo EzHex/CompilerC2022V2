@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compuler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -75,6 +75,20 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitIfBlock([NotNull] c2022v2Parser.IfBlockContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.elseifBlock"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitElseifBlock([NotNull] c2022v2Parser.ElseifBlockContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.elseBlock"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitElseBlock([NotNull] c2022v2Parser.ElseBlockContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.forBlock"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -122,6 +136,20 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitAdd([NotNull] c2022v2Parser.AddContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.unaryadd"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUnaryadd([NotNull] c2022v2Parser.UnaryaddContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.unarysub"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUnarysub([NotNull] c2022v2Parser.UnarysubContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.sub"/>.

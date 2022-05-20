@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compuler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -114,6 +114,32 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	public virtual void ExitIfBlock([NotNull] c2022v2Parser.IfBlockContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.elseifBlock"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterElseifBlock([NotNull] c2022v2Parser.ElseifBlockContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.elseifBlock"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitElseifBlock([NotNull] c2022v2Parser.ElseifBlockContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.elseBlock"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterElseBlock([NotNull] c2022v2Parser.ElseBlockContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.elseBlock"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitElseBlock([NotNull] c2022v2Parser.ElseBlockContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.forBlock"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -203,6 +229,32 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitAdd([NotNull] c2022v2Parser.AddContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.unaryadd"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterUnaryadd([NotNull] c2022v2Parser.UnaryaddContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.unaryadd"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitUnaryadd([NotNull] c2022v2Parser.UnaryaddContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.unarysub"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterUnarysub([NotNull] c2022v2Parser.UnarysubContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.unarysub"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitUnarysub([NotNull] c2022v2Parser.UnarysubContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.sub"/>.

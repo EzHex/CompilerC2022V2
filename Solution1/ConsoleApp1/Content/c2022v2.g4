@@ -12,9 +12,11 @@ statement: (assignment|funCall) ';';
 
 assignment: IDENTIFIER '=' expression;
 
-funCall: IDENTIFIER '(' (expression (',' expression )*)? ')';
+funCall: (PRINT|IDENTIFIER) '(' (expression (',' expression )*)? ')';
 
-ifBlock: 'if' '(' expression ')' block 'ifend' ';' ;
+ifBlock: 'if' '(' expression ')' block elseifBlock* elseBlock? 'ifend' ';' ;
+elseifBlock: 'elseif' '(' expression ')' block;
+elseBlock: 'else' block;
 
 forBlock: 'for' '(' assignment ';' expression ';' expression ')' block 'forend' ';';
 
@@ -48,6 +50,7 @@ comp: '==' | '!=' | '>' | '<' | '<=' | '>=';
 
 constant: INTEGER | DOUBLE | CHAR | BOOL | NULL;
 
+PRINT: 'print';
 
 INTEGER: [0-9]+;
 DOUBLE: [0-9]+ '.' [0-9]+;
