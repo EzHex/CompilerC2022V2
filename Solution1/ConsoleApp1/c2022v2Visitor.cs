@@ -18,7 +18,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
     public override object? VisitConstant(c2022v2Parser.ConstantContext context)
     {
-        if (context.INTEGER() is {} i)
+        if (context.INTEGER() is { } i)
         {
             return int.Parse(i.GetText());
         }

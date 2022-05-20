@@ -45,5 +45,5 @@ CHAR: [a-zA-Z];
 BOOL: 'true' | 'false';
 NULL: 'null';
 
-IDENTIFIER: [a-zA-Z_][a-zA-Z0-9]*;
+IDENTIFIER: [a-zA-Z_]([a-zA-Z0-9])*;
 WS: [\t\r\n]+ -> skip;
