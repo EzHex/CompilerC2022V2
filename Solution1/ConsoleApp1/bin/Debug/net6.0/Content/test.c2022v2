@@ -1,8 +1,2 @@
-﻿a = true;
-b = 5;
-c = 1.69;
-d = 'g';
+﻿int a = 45;
 print(a);
-print(b);
-print(c);
-print(d);

@@ -55,11 +55,10 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             if (Variables.ContainsKey(id.GetText()))
             {
                 Console.WriteLine(Variables[id.GetText()]);
-                
             }
             else
             {
-                Console.WriteLine("Variable does not exist");
+                throw new Exception("Variable does not exist");
             }
         }
         else
@@ -67,7 +66,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             Console.WriteLine(Visit(context.expression()));    
         }
         
-
         return null;
     }
 }

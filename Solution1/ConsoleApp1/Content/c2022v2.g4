@@ -2,17 +2,18 @@
 
 program: line* EOF;
 
-line: statement 
-    | ifBlock 
-    | forBlock 
-    | whileBlock
-    ;
+line: 
+    statement
+|   ifBlock 
+|   forBlock 
+|   whileBlock
+;
 
 statement: (assignment|funCall|printCall) ';';
 
-assignment: IDENTIFIER '=' expression;
+assignment: TYPE IDENTIFIER '=' expression;
 
-funCall: IDENTIFIER '(' (expression (',' expression )*)? ')';
+funCall: TYPE IDENTIFIER '(' (expression (',' expression )*)? ')';
 
 printCall: PRINT '(' expression ')';
 
@@ -53,6 +54,7 @@ comp: '==' | '!=' | '>' | '<' | '<=' | '>=';
 constant: INTEGER | DOUBLE | CHAR | BOOL | NULL;
 
 PRINT: 'print';
+TYPE: 'int' | 'double' | 'char' | 'bool' | 'void';
 
 INTEGER: [0-9]+;
 DOUBLE: [0-9]+ '.' [0-9]+;

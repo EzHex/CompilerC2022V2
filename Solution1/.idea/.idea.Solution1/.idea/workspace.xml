@@ -17,13 +17,6 @@
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/c2022v2Visitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/c2022v2Visitor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseVisitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseVisitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Listener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Listener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Parser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Visitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Visitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/refint/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/refint/ConsoleApp1.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +125,13 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1653056047720</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary=".">
+      <created>1653058587358</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1653058587358</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
