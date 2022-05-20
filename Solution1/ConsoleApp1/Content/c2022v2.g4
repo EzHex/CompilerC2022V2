@@ -36,6 +36,7 @@ expression:
 |   funCall                                 #functionCallExpression
 |   '(' expression ')'                      #parenthesesExpression
 |   '!' expression                          #booleanUnaryExpression
+|   expression booleanBinaryOp expression # booleanBinaryOpExpression
 |   expression comp expression              #booleanCompareExpression
 |   expression numericMultiOp expression    #numericMultiOpExpression
 |   expression numericAddOp expression      #numericAddOpExpression
@@ -46,6 +47,7 @@ numericMultiOp : '*' | '/' | '%' ;
 numericAddAss : '+=' | '-=';
 numericAddOp : '+' | '-' ;
 unaryOp: '++' | '--';
+booleanBinaryOp : '||' | '&&' ;
 comp: '==' | '!=' | '>' | '<' | '<=' | '>=';
 
 constant: INTEGER | DOUBLE | CHAR | BOOL | NULL;
