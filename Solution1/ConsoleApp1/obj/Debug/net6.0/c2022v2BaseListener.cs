@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compuler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -35,6 +35,141 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.6.6")]
 [System.CLSCompliant(false)]
 public partial class c2022v2BaseListener : Ic2022v2Listener {
+	/// <summary>
+	/// Enter a parse tree produced by the <c>constantExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterConstantExpression([NotNull] c2022v2Parser.ConstantExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>constantExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitConstantExpression([NotNull] c2022v2Parser.ConstantExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>identifierExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIdentifierExpression([NotNull] c2022v2Parser.IdentifierExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>identifierExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIdentifierExpression([NotNull] c2022v2Parser.IdentifierExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>unaryOpExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterUnaryOpExpression([NotNull] c2022v2Parser.UnaryOpExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>unaryOpExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitUnaryOpExpression([NotNull] c2022v2Parser.UnaryOpExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>functionCallExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFunctionCallExpression([NotNull] c2022v2Parser.FunctionCallExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>functionCallExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFunctionCallExpression([NotNull] c2022v2Parser.FunctionCallExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>parenthesesExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterParenthesesExpression([NotNull] c2022v2Parser.ParenthesesExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>parenthesesExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitParenthesesExpression([NotNull] c2022v2Parser.ParenthesesExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>booleanUnaryExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBooleanUnaryExpression([NotNull] c2022v2Parser.BooleanUnaryExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>booleanUnaryExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBooleanUnaryExpression([NotNull] c2022v2Parser.BooleanUnaryExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>booleanCompareExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBooleanCompareExpression([NotNull] c2022v2Parser.BooleanCompareExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>booleanCompareExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBooleanCompareExpression([NotNull] c2022v2Parser.BooleanCompareExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>numericMultiOpExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterNumericMultiOpExpression([NotNull] c2022v2Parser.NumericMultiOpExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>numericMultiOpExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitNumericMultiOpExpression([NotNull] c2022v2Parser.NumericMultiOpExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>numericAddOpExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterNumericAddOpExpression([NotNull] c2022v2Parser.NumericAddOpExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>numericAddOpExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitNumericAddOpExpression([NotNull] c2022v2Parser.NumericAddOpExpressionContext context) { }
+
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.program"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -75,6 +210,19 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	public virtual void ExitStatement([NotNull] c2022v2Parser.StatementContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.mathAssignment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterMathAssignment([NotNull] c2022v2Parser.MathAssignmentContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.mathAssignment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitMathAssignment([NotNull] c2022v2Parser.MathAssignmentContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.assignment"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -88,6 +236,19 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	public virtual void ExitAssignment([NotNull] c2022v2Parser.AssignmentContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.unaryOperation"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterUnaryOperation([NotNull] c2022v2Parser.UnaryOperationContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.unaryOperation"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitUnaryOperation([NotNull] c2022v2Parser.UnaryOperationContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.funCall"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -99,6 +260,19 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitFunCall([NotNull] c2022v2Parser.FunCallContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.bindCall"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBindCall([NotNull] c2022v2Parser.BindCallContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.bindCall"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBindCall([NotNull] c2022v2Parser.BindCallContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.printCall"/>.
@@ -205,82 +379,69 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	public virtual void ExitExpression([NotNull] c2022v2Parser.ExpressionContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="c2022v2Parser.mul"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.numericMultiAss"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterMul([NotNull] c2022v2Parser.MulContext context) { }
+	public virtual void EnterNumericMultiAss([NotNull] c2022v2Parser.NumericMultiAssContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="c2022v2Parser.mul"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.numericMultiAss"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitMul([NotNull] c2022v2Parser.MulContext context) { }
+	public virtual void ExitNumericMultiAss([NotNull] c2022v2Parser.NumericMultiAssContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="c2022v2Parser.div"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.numericMultiOp"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterDiv([NotNull] c2022v2Parser.DivContext context) { }
+	public virtual void EnterNumericMultiOp([NotNull] c2022v2Parser.NumericMultiOpContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="c2022v2Parser.div"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.numericMultiOp"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitDiv([NotNull] c2022v2Parser.DivContext context) { }
+	public virtual void ExitNumericMultiOp([NotNull] c2022v2Parser.NumericMultiOpContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="c2022v2Parser.add"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.numericAddAss"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterAdd([NotNull] c2022v2Parser.AddContext context) { }
+	public virtual void EnterNumericAddAss([NotNull] c2022v2Parser.NumericAddAssContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="c2022v2Parser.add"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.numericAddAss"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitAdd([NotNull] c2022v2Parser.AddContext context) { }
+	public virtual void ExitNumericAddAss([NotNull] c2022v2Parser.NumericAddAssContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="c2022v2Parser.unaryadd"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.numericAddOp"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterUnaryadd([NotNull] c2022v2Parser.UnaryaddContext context) { }
+	public virtual void EnterNumericAddOp([NotNull] c2022v2Parser.NumericAddOpContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="c2022v2Parser.unaryadd"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.numericAddOp"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitUnaryadd([NotNull] c2022v2Parser.UnaryaddContext context) { }
+	public virtual void ExitNumericAddOp([NotNull] c2022v2Parser.NumericAddOpContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="c2022v2Parser.unarysub"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.unaryOp"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterUnarysub([NotNull] c2022v2Parser.UnarysubContext context) { }
+	public virtual void EnterUnaryOp([NotNull] c2022v2Parser.UnaryOpContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="c2022v2Parser.unarysub"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.unaryOp"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitUnarysub([NotNull] c2022v2Parser.UnarysubContext context) { }
-
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="c2022v2Parser.sub"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSub([NotNull] c2022v2Parser.SubContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="c2022v2Parser.sub"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSub([NotNull] c2022v2Parser.SubContext context) { }
+	public virtual void ExitUnaryOp([NotNull] c2022v2Parser.UnaryOpContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.comp"/>.

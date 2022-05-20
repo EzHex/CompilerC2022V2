@@ -9,12 +9,14 @@ line:
 |   whileBlock
 ;
 
-statement: (assignment|funCall|printCall) ';';
+statement: (mathAssignment|assignment|funCall|printCall|bindCall) ';';
 
-assignment: TYPE IDENTIFIER '=' expression;
+mathAssignment: IDENTIFIER (numericMultiAss|numericAddAss) expression;
+assignment: TYPE? IDENTIFIER '=' expression;
+unaryOperation : IDENTIFIER unaryOp;
 
 funCall: TYPE IDENTIFIER '(' (expression (',' expression )*)? ')';
-
+bindCall : BIND '(' (expression (',' expression )*)? ')';
 printCall: PRINT '(' expression ')';
 
 ifBlock: 'if' '(' expression ')' block elseifBlock* elseBlock? 'ifend' ';' ;
@@ -28,32 +30,28 @@ whileBlock: 'while' expression block 'whileend' ';';
 block: line+ ;
 
 expression:
-    constant
-|   IDENTIFIER
-|   funCall
-|   '(' expression ')'
-|   '!' expression
-|   expression comp expression
-|   expression mul expression
-|   expression div expression
-|   expression add expression
-|   expression sub expression 
-|   expression unaryadd //TODO FIX CAUSE IT CAN TAKE FUNCCALL++
-|   expression unarysub //SAME
-//TODO FIX += -= *= /=
+    constant                                #constantExpression
+|   IDENTIFIER                              #identifierExpression
+|   IDENTIFIER unaryOp                      #unaryOpExpression
+|   funCall                                 #functionCallExpression
+|   '(' expression ')'                      #parenthesesExpression
+|   '!' expression                          #booleanUnaryExpression
+|   expression comp expression              #booleanCompareExpression
+|   expression numericMultiOp expression    #numericMultiOpExpression
+|   expression numericAddOp expression      #numericAddOpExpression
 ;
 
-mul: '*';
-div: '/' | '%';
-add: '+';
-unaryadd: '++';
-unarysub: '--';
-sub: '-';
+numericMultiAss : '*=' | '/=' | '%=';
+numericMultiOp : '*' | '/' | '%' ;
+numericAddAss : '+=' | '-=';
+numericAddOp : '+' | '-' ;
+unaryOp: '++' | '--';
 comp: '==' | '!=' | '>' | '<' | '<=' | '>=';
 
 constant: INTEGER | DOUBLE | CHAR | BOOL | NULL;
 
 PRINT: 'print';
+BIND : 'bind' | 'unbind';
 TYPE: 'int' | 'double' | 'char' | 'bool' | 'void';
 
 INTEGER: [0-9]+;

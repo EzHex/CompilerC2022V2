@@ -1,0 +1,34 @@
+<changelist name="Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]" date="1653071327264" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 20/05/2022 21:28 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.pdb" />
+    <option name="AFTER_PATH" value="ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp1.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll" />
+    <option name="AFTER_PATH" value="ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp1.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ConsoleApp1/obj/Debug/net6.0/refint/ConsoleApp1.dll" />
+    <option name="AFTER_PATH" value="ConsoleApp1/obj/Debug/net6.0/refint/ConsoleApp1.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp11.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.dll" />
+    <option name="AFTER_PATH" value="ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp12.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb" />
+    <option name="AFTER_PATH" value="ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp11.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll" />
+    <option name="AFTER_PATH" value="ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp13.dll" />
+  </binary>
+</changelist>

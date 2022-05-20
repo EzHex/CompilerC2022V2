@@ -7,16 +7,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a71278d-1cd7-486a-93e7-b09a716d6e25" name="Changes" comment="">
+    <list default="true" id="7a71278d-1cd7-486a-93e7-b09a716d6e25" name="Changes" comment="Fixed fully parenthesis and binary operations such as plus">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_17_14_[Changes]/ConsoleApp1.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_17_14_[Changes]/ConsoleApp1.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_17_14_[Changes]/ConsoleApp11.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_17_14_[Changes]/ConsoleApp11.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_17_14_[Changes]/ConsoleApp12.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_17_14_[Changes]/ConsoleApp13.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_17_14_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_17_14__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp1.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp1.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp11.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp11.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp12.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/ConsoleApp13.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2022_21_28__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-20_16_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-20_16_27__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/Content/c2022v2.g4" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Content/c2022v2.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/Content/test.c2022v2" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Content/test.c2022v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/Content/test.c2022v2" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/Content/test.c2022v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/c2022v2Visitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/c2022v2Visitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.Antlr4GeneratedCodeFileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.Antlr4GeneratedCodeFileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseVisitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseVisitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Lexer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Lexer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Lexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Lexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Listener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Listener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Parser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Visitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Visitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/refint/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/refint/ConsoleApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +64,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b6a71b9fb8cb8fcf342bff16be4e6da2de533ad363bb5cc78b2dca9bd59e83/Char.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f3b9684f72bc2cc435eb694f7cc86eca8c240d2d1cefa1e8697a61f1f2f27f/SafeFileHandle.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd9722470dec41f1a857a84e3978f5b534200/31/4fc8b6fe/AbstractParseTreeVisitor`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd9722470dec41f1a857a84e3978f5b534200/31/6d725661/ParserRuleContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd9722470dec41f1a857a84e3978f5b534200/f6/f644c0c8/TerminalNodeImpl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,19 +88,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.45884147",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="ConsoleApp1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -119,19 +169,7 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1653035202894</updated>
     </task>
-    <task id="LOCAL−00006" summary=".">
-      <created>1653056047720</created>
-      <option name="number" value="LOCAL−00006" />
-      <option name="presentableId" value="LOCAL−00006" />
-      <updated>1653056047720</updated>
-    </task>
-    <task id="LOCAL−00007" summary=".">
-      <created>1653058587358</created>
-      <option name="number" value="LOCAL−00007" />
-      <option name="presentableId" value="LOCAL−00007" />
-      <updated>1653058587358</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,13 +177,25 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="new" />
     <MESSAGE value="simple g4" />
     <MESSAGE value="start gramma" />
-    <MESSAGE value="new begining" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="new begining" />
+    <MESSAGE value="Fixed fully parenthesis and binary operations such as plus" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed fully parenthesis and binary operations such as plus" />
   </component>
 </project>
