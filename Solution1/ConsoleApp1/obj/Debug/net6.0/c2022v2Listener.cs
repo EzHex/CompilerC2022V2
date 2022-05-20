@@ -87,6 +87,17 @@ public interface Ic2022v2Listener : IParseTreeListener {
 	void ExitFunCall([NotNull] c2022v2Parser.FunCallContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.printCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPrintCall([NotNull] c2022v2Parser.PrintCallContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.printCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPrintCall([NotNull] c2022v2Parser.PrintCallContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.ifBlock"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

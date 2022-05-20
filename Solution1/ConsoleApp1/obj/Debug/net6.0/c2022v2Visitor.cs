@@ -68,6 +68,13 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitFunCall([NotNull] c2022v2Parser.FunCallContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.printCall"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPrintCall([NotNull] c2022v2Parser.PrintCallContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.ifBlock"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

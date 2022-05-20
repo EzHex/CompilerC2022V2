@@ -1,1 +1,8 @@
-﻿print(4);
+﻿a = true;
+b = 5;
+c = 1.69;
+d = 'g';
+print(a);
+print(b);
+print(c);
+print(d);

@@ -1,4 +1,5 @@
-﻿using ConsoleApp1.Content;
+﻿using System.Diagnostics.CodeAnalysis;
+using ConsoleApp1.Content;
 
 namespace ConsoleApp1;
 
@@ -30,7 +31,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         
         if (context.CHAR() is { } c)
         {
-            return char.Parse(c.GetText());
+            return char.Parse(c.GetText().Trim('\''));
         }
         
         if (context.BOOL() is { } b)
@@ -46,13 +47,27 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         throw new NotImplementedException();
     }
 
-    public override object? VisitFunCall(c2022v2Parser.FunCallContext context)
+    public override object? VisitPrintCall(c2022v2Parser.PrintCallContext context)
     {
-        if (context.PRINT() is { } p)
+        var id = context.expression().IDENTIFIER();
+        if ( id != null)
         {
-            //Console.WriteLine(Visit(context.expression()).ToString());
+            if (Variables.ContainsKey(id.GetText()))
+            {
+                Console.WriteLine(Variables[id.GetText()]);
+                
+            }
+            else
+            {
+                Console.WriteLine("Variable does not exist");
+            }
         }
-    
+        else
+        {
+            Console.WriteLine(Visit(context.expression()));    
+        }
+        
+
         return null;
     }
 }

@@ -8,11 +8,13 @@ line: statement
     | whileBlock
     ;
 
-statement: (assignment|funCall) ';';
+statement: (assignment|funCall|printCall) ';';
 
 assignment: IDENTIFIER '=' expression;
 
-funCall: (PRINT|IDENTIFIER) '(' (expression (',' expression )*)? ')';
+funCall: IDENTIFIER '(' (expression (',' expression )*)? ')';
+
+printCall: PRINT '(' expression ')';
 
 ifBlock: 'if' '(' expression ')' block elseifBlock* elseBlock? 'ifend' ';' ;
 elseifBlock: 'elseif' '(' expression ')' block;

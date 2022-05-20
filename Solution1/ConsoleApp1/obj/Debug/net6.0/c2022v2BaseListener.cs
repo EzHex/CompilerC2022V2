@@ -101,6 +101,19 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	public virtual void ExitFunCall([NotNull] c2022v2Parser.FunCallContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.printCall"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPrintCall([NotNull] c2022v2Parser.PrintCallContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.printCall"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPrintCall([NotNull] c2022v2Parser.PrintCallContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.ifBlock"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
