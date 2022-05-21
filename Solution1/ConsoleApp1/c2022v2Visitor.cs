@@ -346,61 +346,128 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         return null;
     }
 
-    public override object? VisitUnaryOp(c2022v2Parser.UnaryOpContext context)
+    public override object? VisitUnaryOperation(c2022v2Parser.UnaryOperationContext context)
     {
-        var value = Visit(context);
-        return null;
+        var identifier = context.IDENTIFIER().GetText();
+        if (Variables.ContainsKey(identifier))
+        {
+            var value = Variables[identifier];
+            if (value != null)
+            {
+                if (value.GetType().FullName == "System.Double")
+                {
+                    switch (context.unaryOp().GetText())
+                    {
+                        case "++":
+                            double temp = (double)value;
+                            temp++;
+                            Variables[identifier] = temp;
+                            return temp;
+                        case "--":
+                            temp = (double)value;
+                            temp--;
+                            Variables[identifier] = temp;
+                            return temp;
+                        default: break;
+                    }
+                }
+
+                if (value.GetType().FullName == "System.Int32")
+                {
+                    switch (context.unaryOp().GetText())
+                    {
+                        case "++":
+                            int temp = (int)value;
+                            temp++;
+                            Variables[identifier] = temp;
+                            return temp;
+                        case "--":
+                            temp = (int)value;
+                            temp--;
+                            Variables[identifier] = temp;
+                            return temp;
+                        default: break;
+                    }
+                }
+
+                if (value.GetType().FullName == "System.Char")
+                {
+                    switch (context.unaryOp().GetText())
+                    {
+                        case "++":
+                            char temp = (char)value;
+                            temp++;
+                            Variables[identifier] = temp;
+                            return temp;
+                        case "--":
+                            temp = (char)value;
+                            temp--;
+                            Variables[identifier] = temp;
+                            return temp;
+                        default: break;
+                    }
+                }
+            }
+
+            return value;
+        }
+        return base.VisitUnaryOperation(context);
     }
+
     public override object? VisitUnaryOpExpression(c2022v2Parser.UnaryOpExpressionContext context)
     {
-        var value = Visit(context.IDENTIFIER()); // Sitas checkina jau del esamybes
+        var identifier = context.IDENTIFIER().GetText();
+        var value = Variables[identifier];
         if (value != null)
         {
-            var type = value.GetType();
-            Console.WriteLine(type);
-            if (type is Int32)
+            if (value.GetType().FullName == "System.Int32")
             {
                int  temp = (int)value;
                 switch (context.unaryOp().GetText())
                 {
                     case "++":
                         temp++;
-                        Console.WriteLine(temp);
+                        Variables[identifier] = temp;
                         return temp;
                     case "--":
                         temp--;
+                        Variables[identifier] = temp;
                         return temp;
                     default:
                         return null;
                         ;
                 }
             }
-            else if (type is char)
+            if (value.GetType().FullName == "System.Char")
             {
                 char temp = (char)value;
                 switch (context.unaryOp().GetText())
                 {
                     case "++":
                         temp++;
+                        Variables[identifier] = temp;
                         return temp;
                     case "--":
                         temp--;
+                        Variables[identifier] = temp;
                         return temp;
                     default:
                         return null;
                         ;
                 }
             }
-            else if (type is Double)
+            if (value.GetType().FullName == "System.Double")
             {
                 double temp = (double)value;
                 switch (context.unaryOp().GetText())
                 {
                     case "++":
                         temp++;
+                        Variables[identifier] = temp;
                         return temp;
                     case "--":
                         temp--;
+                        Variables[identifier] = temp;
                         return temp;
                     default:
                         return null;
@@ -414,6 +481,259 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         }
 
         return base.VisitUnaryOpExpression(context);
+    }
+
+    public override object? VisitBooleanCompareExpression(c2022v2Parser.BooleanCompareExpressionContext context)
+    {
+        var val1 = Visit(context.expression(0));
+        var val2 = Visit(context.expression(1));
+        var comparator = context.comp().GetText();
+        if (val1 != null && val2 != null)
+        {
+            if (val1.GetType().FullName == "System.Int32")
+            {
+                if (val2.GetType().FullName == "System.Double")
+                {
+                    switch (comparator)
+                    {
+                        case ">":
+                            return (int)val1 > (double)val2;
+                        case "<":
+                            return (int)val1 < (double)val2;
+                        case "==":
+                            return (int)val1 == (double)val2;
+                        case "!=":
+                            return (int)val1 != (double)val2;
+                        case "<=":
+                            return (int)val1 <= (double)val2;
+                        case ">=":
+                            return (int)val1 >= (double)val2;
+                        default:
+                            return null;
+                            ;
+                    }
+                }
+                if (val2.GetType().FullName == "System.Int32")
+                {
+                    switch (comparator)
+                    {
+                        case ">":
+                            return (int)val1 > (int)val2;
+                        case "<":
+                            return (int)val1 < (int)val2;
+                        case "==":
+                            return (int)val1 == (int)val2;
+                        case "!=":
+                            return (int)val1 != (int)val2;
+                        case "<=":
+                            return (int)val1 <= (int)val2;
+                        case ">=":
+                            return (int)val1 >= (int)val2;
+                        default:
+                            return null;
+                            ;
+                    }
+                }
+                if (val2.GetType().FullName == "System.Char")
+                {
+                    switch (comparator)
+                    {
+                        case ">":
+                            return (int)val1 > (char)val2;
+                        case "<":
+                            return (int)val1 < (char)val2;
+                        case "==":
+                            return (int)val1 == (char)val2;
+                        case "!=":
+                            return (int)val1 != (char)val2;
+                        case "<=":
+                            return (int)val1 <= (char)val2;
+                        case ">=":
+                            return (int)val1 >= (char)val2;
+                        default:
+                            return null;
+                            ;
+                    }
+                }
+
+                if (val2.GetType().FullName == "System.Boolean")
+                {
+                    throw new Exception("Cant compare of type : Int32 and Boolean");
+                }
+            }
+            if (val1.GetType().FullName == "System.Double")
+            {
+                if (val2.GetType().FullName == "System.Double")
+                {
+                    switch (comparator)
+                    {
+                        case ">":
+                            return (double)val1 > (double)val2;
+                        case "<":
+                            return (double)val1 < (double)val2;
+                        case "==":
+                            return (double)val1 == (double)val2;
+                        case "!=":
+                            return (double)val1 != (double)val2;
+                        case "<=":
+                            return (double)val1 <= (double)val2;
+                        case ">=":
+                            return (double)val1 >= (double)val2;
+                        default:
+                            return null;
+                            ;
+                    }
+                }
+                if (val2.GetType().FullName == "System.Int32")
+                {
+                    switch (comparator)
+                    {
+                        case ">":
+                            return (double)val1 > (int)val2;
+                        case "<":
+                            return (double)val1 < (int)val2;
+                        case "==":
+                            return (double)val1 == (int)val2;
+                        case "!=":
+                            return (double)val1 != (int)val2;
+                        case "<=":
+                            return (double)val1 <= (int)val2;
+                        case ">=":
+                            return (double)val1 >= (int)val2;
+                        default:
+                            return null;
+                            ;
+                    }
+                }
+                if (val2.GetType().FullName == "System.Char")
+                {
+                    switch (comparator)
+                    {
+                        case ">":
+                            return (double)val1 > (char)val2;
+                        case "<":
+                            return (double)val1 < (char)val2;
+                        case "==":
+                            return (double)val1 == (char)val2;
+                        case "!=":
+                            return (double)val1 != (char)val2;
+                        case "<=":
+                            return (double)val1 <= (char)val2;
+                        case ">=":
+                            return (double)val1 >= (char)val2;
+                        default:
+                            return null;
+                            ;
+                    }
+                }
+
+                if (val2.GetType().FullName == "System.Boolean")
+                {
+                    throw new Exception("Cant compare of type : Double and Boolean");
+                }
+            }
+            if (val1.GetType().FullName == "System.Char")
+            {
+                if (val2.GetType().FullName == "System.Double")
+                {
+                    switch (comparator)
+                    {
+                        case ">":
+                            return (char)val1 > (double)val2;
+                        case "<":
+                            return (char)val1 < (double)val2;
+                        case "==":
+                            return (char)val1 == (double)val2;
+                        case "!=":
+                            return (char)val1 != (double)val2;
+                        case "<=":
+                            return (char)val1 <= (double)val2;
+                        case ">=":
+                            return (char)val1 >= (double)val2;
+                        default:
+                            return null;
+                            ;
+                    }
+                }
+                if (val2.GetType().FullName == "System.Int32")
+                {
+                    switch (comparator)
+                    {
+                        case ">":
+                            return (char)val1 > (int)val2;
+                        case "<":
+                            return (char)val1 < (int)val2;
+                        case "==":
+                            return (char)val1 == (int)val2;
+                        case "!=":
+                            return (char)val1 != (int)val2;
+                        case "<=":
+                            return (char)val1 <= (int)val2;
+                        case ">=":
+                            return (char)val1 >= (int)val2;
+                        default:
+                            return null;
+                            ;
+                    }
+                }
+                if (val2.GetType().FullName == "System.Char")
+                {
+                    switch (comparator)
+                    {
+                        case ">":
+                            return (char)val1 > (char)val2;
+                        case "<":
+                            return (char)val1 < (char)val2;
+                        case "==":
+                            return (char)val1 == (char)val2;
+                        case "!=":
+                            return (char)val1 != (char)val2;
+                        case "<=":
+                            return (char)val1 <= (char)val2;
+                        case ">=":
+                            return (char)val1 >= (char)val2;
+                        default:
+                            return null;
+                            ;
+                    }
+                }
+
+                if (val2.GetType().FullName == "System.Boolean")
+                {
+                    throw new Exception("Cant compare of type : char and Boolean");
+                }
+            }
+            if (val1.GetType().FullName == "System.Boolean")
+            {
+                if (val2.GetType().FullName == "System.Boolean")
+                {
+                    switch (comparator)
+                    {
+                        case "==":
+                            return (bool)val1 == (bool)val2;
+                        case "!=":
+                            return (bool)val1 != (bool)val2;
+                        default:
+                            return null;
+                            ;
+                    }
+                }
+                if (val2.GetType().FullName == "System.Int32")
+                {
+                    throw new Exception("Cant compare of type : Boolean and Int32");
+                }
+                if (val2.GetType().FullName == "System.Char")
+                {
+                    throw new Exception("Cant compare of type : Boolean and Char");
+                }
+
+                if (val2.GetType().FullName == "System.Double")
+                {
+                    throw new Exception("Cant compare of type : Boolean and Double");
+                }
+            }
+        }
+        return true;
     }
 
     public override object? VisitPrintCall(c2022v2Parser.PrintCallContext context)
@@ -459,8 +779,10 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                 
                 return null;
             }
-            
-            return integ < temp.Count ? temp[integ] : null;
+
+            var toRetun = temp[integ];
+            Console.WriteLine(toRetun.ToString());
+            return integ < temp.Count ? temp[integ].ToString() : null;
         }
 
         return null;
@@ -490,50 +812,172 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
         throw new Exception("Index out of range");
     }
-
     public override object? VisitIfBlock(c2022v2Parser.IfBlockContext context)
     {
-        if (IsTrue(context.expression()))
+        var expressResult = Visit(context.expression());
+        if (expressResult != null)
         {
-            Visit(context.block());
-        }
-        else
-        {
-            foreach (var elsif in context.elseifBlock())
+            if ((bool)expressResult)
             {
-                if (IsTrue(elsif.expression()))
+                Visit(context.block());
+            }
+            else
+            {
+                foreach (var elsif in context.elseifBlock())
                 {
-                    Visit(elsif.block());
-                    return null;
+                    var elsifExpressionResult = Visit(elsif.expression());
+                    if (elsifExpressionResult != null)
+                    {
+                        if ((bool)elsifExpressionResult)
+                        {
+                            Visit(elsif.block());
+                        }
+                    }
+                }
+                if (context.elseBlock() is { })
+                {
+                    Visit(context.elseBlock().block());
+                }
+            }
+        }
+
+        return null;
+    }
+    
+    public override object? VisitWhileBlock(c2022v2Parser.WhileBlockContext context)
+    {
+        var expressionVisitResult = Visit(context.expression());
+        if (expressionVisitResult != null)
+        {
+            bool express = (bool)expressionVisitResult;
+            while (express)
+            {
+                Visit(context.block());
+                expressionVisitResult = Visit(context.expression());
+                if (expressionVisitResult != null)
+                {
+                    express = (bool)expressionVisitResult;
+                }
+            }
+        }
+        return null;
+    }
+
+    public override object? VisitMathAssignment(c2022v2Parser.MathAssignmentContext context)
+    {
+        //TODO paklaust arno ar idet supporta int + double ir double + int
+        //TODO return exceptions if types arent the same and arent numbers
+        var varName = context.IDENTIFIER().GetText();
+        if (Variables.ContainsKey(varName))
+        {
+            var val1 = Variables[varName];
+            var val2 = Visit(context.expression());
+            if (val1 != null && val2 != null)
+            {
+                if (val1.GetType().FullName == "System.Int32")
+                {
+                    if (val2.GetType().FullName == "System.Int32")
+                    {
+                        int castedVal = (int)val1;
+                        int castedVal2 = (int)val2;
+                        switch (context.numericAss().GetText())
+                        {
+                            case "+=":
+                                castedVal += castedVal2;
+                                Variables[varName] = castedVal;
+                                return castedVal;
+                            case "-=":
+                                castedVal -= castedVal2;
+                                Variables[varName] = castedVal;
+                                return castedVal;
+                            case "*=":
+                                castedVal *= castedVal2;
+                                Variables[varName] = castedVal;
+                                return castedVal;
+                            case "/=":
+                                castedVal /= castedVal2;
+                                Variables[varName] = castedVal;
+                                return castedVal;
+                            case "%=":
+                                castedVal %= castedVal2;
+                                Variables[varName] = castedVal;
+                                return castedVal;
+                            default: break;
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Mathematical assign operations can only be between two numbers types of the same type(int32)");
+                    }
+                }
+                else if (val1.GetType().FullName == "System.Double")
+                {
+                    if (val2.GetType().FullName == "System.Double")
+                    {
+                        double castedVal = (double)val1;
+                        double castedVal2 = (double)val2;
+                        switch (context.numericAss().GetText())
+                        {
+                            case "+=":
+                                castedVal += castedVal2;
+                                Variables[varName] = castedVal;
+                                return castedVal;
+                            case "-=":
+                                castedVal -= castedVal2;
+                                Variables[varName] = castedVal;
+                                return castedVal;
+                            case "*=":
+                                castedVal *= castedVal2;
+                                Variables[varName] = castedVal;
+                                return castedVal;
+                            case "/=":
+                                castedVal /= castedVal2;
+                                Variables[varName] = castedVal;
+                                return castedVal;
+                            case "%=":
+                                castedVal %= castedVal2;
+                                Variables[varName] = castedVal;
+                                return castedVal;
+                            default: break;
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Mathematical assign operations can only be between two numbers types of the same type(double)");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Mathematical assign operations can only be between two numbers types of the same type");
                 }
             }
 
-            Visit(context.elseBlock().block());
+            throw new Exception("One of the assigned operators is null");
+            return null;
         }
-        
-        return null;
+
+        throw new Exception("Identifier doesn't exist");
+
+        throw new Exception("Identifier not found !!!");
     }
 
-    //TODO reikia sutvarkyt while ir padaryt for
-    public override object? VisitWhileBlock(c2022v2Parser.WhileBlockContext context)
+    public override object? VisitForBlock(c2022v2Parser.ForBlockContext context)
     {
-        Func<object?, bool> condition = true ? IsTrue : IsFalse;
-        
-        while (condition(Visit(context.expression())))
+        //TODO get initialization
+        //TODO expression
+        //TODO unary++
+        var initializeVisitResult = Visit(context.assignment());
+        if (initializeVisitResult != null)
         {
-            Visit(context.block());
+            Console.WriteLine(initializeVisitResult);
+            var expressionBooleanVisitResult = Visit(context.expression(0));
+            if (expressionBooleanVisitResult != null)
+            {
+                bool expressionResult = (bool)expressionBooleanVisitResult;
+
+            }
         }
 
-        return null;
+        return base.VisitForBlock(context);
     }
-
-    private bool IsTrue(object? value)
-    {
-        if (value is bool b)
-            return b;
-
-        throw new Exception("Value is not boolean");
-    }
-
-    private bool IsFalse(object? value) => !IsTrue(value);
 }

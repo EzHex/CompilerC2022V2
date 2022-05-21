@@ -7,10 +7,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a71278d-1cd7-486a-93e7-b09a716d6e25" name="Changes" comment="">
+    <list default="true" id="7a71278d-1cd7-486a-93e7-b09a716d6e25" name="Changes" comment="Added support to mathematical assignments that have the same type (type must be a number Int or Double)">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solution1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Content/test.c2022v2" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Content/test.c2022v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Content/c2022v2.g4" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Content/c2022v2.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/c2022v2Visitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/c2022v2Visitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseVisitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2BaseVisitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Listener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Listener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Parser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Visitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/c2022v2Visitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/refint/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/refint/ConsoleApp1.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +29,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b6a71b9fb8cb8fcf342bff16be4e6da2de533ad363bb5cc78b2dca9bd59e83/Char.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f3b9684f72bc2cc435eb694f7cc86eca8c240d2d1cefa1e8697a61f1f2f27f/SafeFileHandle.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd9722470dec41f1a857a84e3978f5b534200/31/4fc8b6fe/AbstractParseTreeVisitor`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd9722470dec41f1a857a84e3978f5b534200/31/6d725661/ParserRuleContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd9722470dec41f1a857a84e3978f5b534200/f6/f644c0c8/TerminalNodeImpl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleApp1/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,8 +103,7 @@
       <workItem from="1653047072830" duration="534000" />
       <workItem from="1653047736530" duration="90000" />
       <workItem from="1653047844229" duration="4058000" />
-      <workItem from="1653121749924" duration="1099000" />
-      <workItem from="1653123129411" duration="1194000" />
+      <workItem from="1653121749924" duration="1026000" />
     </task>
     <task id="LOCAL−00001" summary="new">
       <created>1653023147518</created>
@@ -129,13 +148,21 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1653119277787</updated>
     </task>
-    <task id="LOCAL−00008" summary="array">
-      <created>1653122831707</created>
-      <option name="number" value="LOCAL−00008" />
-      <option name="presentableId" value="LOCAL−00008" />
-      <updated>1653122831707</updated>
+    <task id="LOCAL-00008" summary="Added while support">
+      <created>1653128985357</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1653128985357</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added support to mathematical assignments that have the same type (type must be a number Int or Double)">
+      <created>1653130934137</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653130934137</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +191,27 @@
     <MESSAGE value="Fixed fully parenthesis and binary operations such as plus" />
     <MESSAGE value="Fixed fully parenthesis and binary operations such as plus&#10;Fixed binary and multi operators, code needs refactoring, for now it works" />
     <MESSAGE value="masyvai not finished" />
-    <MESSAGE value="array" />
-    <option name="LAST_COMMIT_MESSAGE" value="array" />
+    <MESSAGE value="Added while support" />
+    <MESSAGE value="Added support to mathematical assignments that have the same type (type must be a number Int or Double)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added support to mathematical assignments that have the same type (type must be a number Int or Double)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ConsoleApp1/c2022v2Visitor.cs</url>
+          <line>815</line>
+          <properties documentPath="C:\Users\modes\OneDrive\Stalinis kompiuteris\Compuler\CompilerC2022V2\Solution1\ConsoleApp1\c2022v2Visitor.cs" initialLine="817" containingFunctionPresentation="method 'VisitIfBlock'">
+            <startOffsets>
+              <option value="29383" />
+            </startOffsets>
+            <endOffsets>
+              <option value="29384" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

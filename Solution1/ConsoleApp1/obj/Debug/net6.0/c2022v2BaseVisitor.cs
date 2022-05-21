@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compuler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -354,7 +354,7 @@ public partial class c2022v2BaseVisitor<Result> : AbstractParseTreeVisitor<Resul
 	public virtual Result VisitExpression([NotNull] c2022v2Parser.ExpressionContext context) { return VisitChildren(context); }
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="c2022v2Parser.numericMultiAss"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.numericAss"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -362,7 +362,7 @@ public partial class c2022v2BaseVisitor<Result> : AbstractParseTreeVisitor<Resul
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitNumericMultiAss([NotNull] c2022v2Parser.NumericMultiAssContext context) { return VisitChildren(context); }
+	public virtual Result VisitNumericAss([NotNull] c2022v2Parser.NumericAssContext context) { return VisitChildren(context); }
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.numericMultiOp"/>.
@@ -374,17 +374,6 @@ public partial class c2022v2BaseVisitor<Result> : AbstractParseTreeVisitor<Resul
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	public virtual Result VisitNumericMultiOp([NotNull] c2022v2Parser.NumericMultiOpContext context) { return VisitChildren(context); }
-
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="c2022v2Parser.numericAddAss"/>.
-	/// <para>
-	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
-	/// on <paramref name="context"/>.
-	/// </para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	public virtual Result VisitNumericAddAss([NotNull] c2022v2Parser.NumericAddAssContext context) { return VisitChildren(context); }
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.numericAddOp"/>.

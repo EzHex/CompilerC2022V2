@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compuler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -240,11 +240,11 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitExpression([NotNull] c2022v2Parser.ExpressionContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="c2022v2Parser.numericMultiAss"/>.
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.numericAss"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitNumericMultiAss([NotNull] c2022v2Parser.NumericMultiAssContext context);
+	Result VisitNumericAss([NotNull] c2022v2Parser.NumericAssContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.numericMultiOp"/>.
@@ -252,13 +252,6 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitNumericMultiOp([NotNull] c2022v2Parser.NumericMultiOpContext context);
-
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="c2022v2Parser.numericAddAss"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitNumericAddAss([NotNull] c2022v2Parser.NumericAddAssContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.numericAddOp"/>.

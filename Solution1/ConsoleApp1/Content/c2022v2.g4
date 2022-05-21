@@ -9,9 +9,9 @@ line:
 |   whileBlock
 ;
 
-statement: (mathAssignment|assignment|arrayAssignment|funCall|printCall|bindCall) ';';
+statement: (mathAssignment|assignment|arrayAssignment|funCall|printCall|bindCall|unaryOperation) ';';
 
-mathAssignment: IDENTIFIER (numericMultiAss|numericAddAss) expression;
+mathAssignment: IDENTIFIER (numericAss) expression;
 assignment: TYPE? IDENTIFIER '=' expression;
 arrayAssignment: (TYPE IDENTIFIER '[' INTEGER ']') | (IDENTIFIER '[' INTEGER ']' '=' expression);
 unaryOperation : IDENTIFIER unaryOp;
@@ -44,9 +44,8 @@ expression:
 |   expression comp expression              #booleanCompareExpression
 ;
 
-numericMultiAss : '*=' | '/=' | '%=';
+numericAss : '*=' | '/=' | '%='| '+=' | '-=';
 numericMultiOp : '*' | '/' | '%' ;
-numericAddAss : '+=' | '-=';
 numericAddOp : '+' | '-' ;
 unaryOp: '++' | '--';
 booleanBinaryOp : '||' | '&&' ;

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compuler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -362,15 +362,15 @@ public interface Ic2022v2Listener : IParseTreeListener {
 	void ExitExpression([NotNull] c2022v2Parser.ExpressionContext context);
 
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="c2022v2Parser.numericMultiAss"/>.
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.numericAss"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterNumericMultiAss([NotNull] c2022v2Parser.NumericMultiAssContext context);
+	void EnterNumericAss([NotNull] c2022v2Parser.NumericAssContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="c2022v2Parser.numericMultiAss"/>.
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.numericAss"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitNumericMultiAss([NotNull] c2022v2Parser.NumericMultiAssContext context);
+	void ExitNumericAss([NotNull] c2022v2Parser.NumericAssContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.numericMultiOp"/>.
@@ -382,17 +382,6 @@ public interface Ic2022v2Listener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitNumericMultiOp([NotNull] c2022v2Parser.NumericMultiOpContext context);
-
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="c2022v2Parser.numericAddAss"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterNumericAddAss([NotNull] c2022v2Parser.NumericAddAssContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="c2022v2Parser.numericAddAss"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitNumericAddAss([NotNull] c2022v2Parser.NumericAddAssContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.numericAddOp"/>.
