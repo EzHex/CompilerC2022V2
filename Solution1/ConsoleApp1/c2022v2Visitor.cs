@@ -7,6 +7,42 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 {
     private Dictionary<string, object?> Variables { get; } = new();
 
+    public override object? VisitBindCall(c2022v2Parser.BindCallContext context)
+    {
+        Console.WriteLine(context.BIND().GetText());
+        switch (context.BIND().GetText())
+        {
+            case "bind" :
+                foreach (var variableName in context.IDENTIFIER())
+                {
+                    string variableNameString = variableName.GetText();
+                    if (Variables.ContainsKey(variableNameString))
+                    {
+                        Console.WriteLine("Binded {0}",variableName);
+                    }
+                    else
+                        throw new Exception("Variable not found !!!");
+                }
+
+                break;
+            case "unbind" :
+                foreach (var variableName in context.IDENTIFIER())
+                {
+                    string variableNameString = variableName.GetText();
+                    if (Variables.ContainsKey(variableNameString))
+                    {
+                        Console.WriteLine("Unbinded {0}",variableName);
+                    }
+                    else
+                        throw new Exception("Variable not found !!!");
+                }
+
+                break;
+        }
+        
+        return null;
+    }
+
     public override object? VisitAssignment(c2022v2Parser.AssignmentContext context)
     {
         var varName = context.IDENTIFIER().GetText();
