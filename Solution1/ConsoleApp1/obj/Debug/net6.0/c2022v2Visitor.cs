@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compuler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -81,12 +81,12 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitBooleanUnaryExpression([NotNull] c2022v2Parser.BooleanUnaryExpressionContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by the <c>booleanCompareExpression</c>
+	/// Visit a parse tree produced by the <c>booleanBinaryOpExpression</c>
 	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitBooleanCompareExpression([NotNull] c2022v2Parser.BooleanCompareExpressionContext context);
+	Result VisitBooleanBinaryOpExpression([NotNull] c2022v2Parser.BooleanBinaryOpExpressionContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by the <c>numericMultiOpExpression</c>
@@ -103,6 +103,14 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitNumericAddOpExpression([NotNull] c2022v2Parser.NumericAddOpExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>booleanCompareExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBooleanCompareExpression([NotNull] c2022v2Parser.BooleanCompareExpressionContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.program"/>.
@@ -138,6 +146,13 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitAssignment([NotNull] c2022v2Parser.AssignmentContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.arrayAssignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitArrayAssignment([NotNull] c2022v2Parser.ArrayAssignmentContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.unaryOperation"/>.
@@ -250,6 +265,13 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitUnaryOp([NotNull] c2022v2Parser.UnaryOpContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.booleanBinaryOp"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBooleanBinaryOp([NotNull] c2022v2Parser.BooleanBinaryOpContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.comp"/>.

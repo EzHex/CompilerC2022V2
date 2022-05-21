@@ -9,10 +9,11 @@ line:
 |   whileBlock
 ;
 
-statement: (mathAssignment|assignment|funCall|printCall|bindCall) ';';
+statement: (mathAssignment|assignment|arrayAssignment|funCall|printCall|bindCall) ';';
 
 mathAssignment: IDENTIFIER (numericMultiAss|numericAddAss) expression;
 assignment: TYPE? IDENTIFIER '=' expression;
+arrayAssignment: (TYPE IDENTIFIER '[' INTEGER ']') | (IDENTIFIER '[' INTEGER ']' '=' expression);
 unaryOperation : IDENTIFIER unaryOp;
 
 funCall: TYPE IDENTIFIER '(' (expression (',' expression )*)? ')';
@@ -36,10 +37,10 @@ expression:
 |   funCall                                 #functionCallExpression
 |   '(' expression ')'                      #parenthesesExpression
 |   '!' expression                          #booleanUnaryExpression
-|   expression booleanBinaryOp expression # booleanBinaryOpExpression
-|   expression comp expression              #booleanCompareExpression
+|   expression booleanBinaryOp expression   #booleanBinaryOpExpression
 |   expression numericMultiOp expression    #numericMultiOpExpression
 |   expression numericAddOp expression      #numericAddOpExpression
+|   expression comp expression              #booleanCompareExpression
 ;
 
 numericMultiAss : '*=' | '/=' | '%=';
@@ -52,6 +53,7 @@ comp: '==' | '!=' | '>' | '<' | '<=' | '>=';
 
 constant: INTEGER | DOUBLE | CHAR | BOOL | NULL;
 
+
 PRINT: 'print';
 BIND : 'bind' | 'unbind';
 TYPE: 'int' | 'double' | 'char' | 'bool' | 'void';
@@ -62,8 +64,8 @@ CHAR: '\''[a-zA-Z]'\'';
 BOOL: 'true' | 'false';
 NULL: 'null';
 
-IDENTIFIER
-    : [a-zA-Z_][a-zA-Z_0-9]*
-    ;
+IDENTIFIER:
+    [a-zA-Z_][a-zA-Z_0-9]*
+;
 COMMENT : ( '//' ~[\r\n]* | '/*' .*? '*/' ) -> skip ;
 WS: [ \t\r\n]+ -> skip;

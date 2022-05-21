@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System.Collections;
+using System.Diagnostics;
+using System.Security.AccessControl;
 using ConsoleApp1.Content;
 
 namespace ConsoleApp1;
@@ -172,9 +174,9 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                     switch (context.numericAddOp().GetText())
                     {
                         case "+" :
-                            return (char)val1 + (int)val2;
+                            return (char)((char)val1 + (int)val2);
                         case "-" :
-                            return (char)val1 - (int)val2;
+                            return (char)((char)val1 - (int)val2);
                         default: break;
                     }
                 }
@@ -183,9 +185,9 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                     switch (context.numericAddOp().GetText())
                     {
                         case "+" :
-                            return (char)val1 + (char)val2;
+                            return (char)((char)val1 + (char)val2);
                         case "-" :
-                            return (char)val1 - (char)val2;
+                            return (char)((char)val1 - (char)val2);
                         default: break;
                     }
                 }
@@ -422,5 +424,71 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             Console.WriteLine(text);
         }
         return null;
-}
+    }
+
+    public override object? VisitArrayAssignment(c2022v2Parser.ArrayAssignmentContext context)
+    {
+        var key = context.IDENTIFIER().GetText();
+        var integ = int.Parse(context.INTEGER().GetText());
+
+        
+        
+        if (!Variables.ContainsKey(key))
+        {
+            Variables[key] = new object[integ];
+        }
+        else
+        {
+            
+            var value = Variables[key];
+            var arr = value as IEnumerable;
+
+            List<object> temp = new List<object>();
+            
+            if (arr != null)
+            {
+                foreach (var VARIABLE in arr)
+                {
+                    temp.Add(VARIABLE);
+                }
+            }
+
+            var exp = Visit(context.expression());
+            if ( exp != null)
+            {
+                temp[integ] = exp;
+
+                Variables[key] = temp.ToArray();
+                
+                return null;
+            }
+            
+            return integ < temp.Count ? temp[integ] : null;
+        }
+
+        return null;
+    }
+
+    //TODO reikia sutvarkyt while ir padaryt for
+    public override object? VisitWhileBlock(c2022v2Parser.WhileBlockContext context)
+    {
+        Func<object?, bool> condition = true ? IsTrue : IsFalse;
+        
+        while (condition(Visit(context.expression())))
+        {
+            Visit(context.block());
+        }
+
+        return null;
+    }
+
+    private bool IsTrue(object? value)
+    {
+        if (value is bool b)
+            return b;
+
+        throw new Exception("Value is not boolean");
+    }
+
+    private bool IsFalse(object? value) => !IsTrue(value);
 }

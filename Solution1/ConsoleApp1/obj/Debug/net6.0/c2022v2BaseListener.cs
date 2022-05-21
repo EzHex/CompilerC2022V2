@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compuler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -126,19 +126,19 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	public virtual void ExitBooleanUnaryExpression([NotNull] c2022v2Parser.BooleanUnaryExpressionContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by the <c>booleanCompareExpression</c>
+	/// Enter a parse tree produced by the <c>booleanBinaryOpExpression</c>
 	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterBooleanCompareExpression([NotNull] c2022v2Parser.BooleanCompareExpressionContext context) { }
+	public virtual void EnterBooleanBinaryOpExpression([NotNull] c2022v2Parser.BooleanBinaryOpExpressionContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by the <c>booleanCompareExpression</c>
+	/// Exit a parse tree produced by the <c>booleanBinaryOpExpression</c>
 	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitBooleanCompareExpression([NotNull] c2022v2Parser.BooleanCompareExpressionContext context) { }
+	public virtual void ExitBooleanBinaryOpExpression([NotNull] c2022v2Parser.BooleanBinaryOpExpressionContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by the <c>numericMultiOpExpression</c>
@@ -169,6 +169,21 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitNumericAddOpExpression([NotNull] c2022v2Parser.NumericAddOpExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>booleanCompareExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBooleanCompareExpression([NotNull] c2022v2Parser.BooleanCompareExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>booleanCompareExpression</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBooleanCompareExpression([NotNull] c2022v2Parser.BooleanCompareExpressionContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.program"/>.
@@ -234,6 +249,19 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitAssignment([NotNull] c2022v2Parser.AssignmentContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.arrayAssignment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterArrayAssignment([NotNull] c2022v2Parser.ArrayAssignmentContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.arrayAssignment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitArrayAssignment([NotNull] c2022v2Parser.ArrayAssignmentContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.unaryOperation"/>.
@@ -442,6 +470,19 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitUnaryOp([NotNull] c2022v2Parser.UnaryOpContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.booleanBinaryOp"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBooleanBinaryOp([NotNull] c2022v2Parser.BooleanBinaryOpContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.booleanBinaryOp"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBooleanBinaryOp([NotNull] c2022v2Parser.BooleanBinaryOpContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.comp"/>.
