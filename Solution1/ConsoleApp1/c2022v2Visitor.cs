@@ -831,6 +831,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                         if ((bool)elsifExpressionResult)
                         {
                             Visit(elsif.block());
+                            return null;
                         }
                     }
                 }
@@ -963,21 +964,27 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
     public override object? VisitForBlock(c2022v2Parser.ForBlockContext context)
     {
-        //TODO get initialization
-        //TODO expression
-        //TODO unary++
-        var initializeVisitResult = Visit(context.assignment());
-        if (initializeVisitResult != null)
+        //TODO patikrinti ar vykdant veiksmus programoje su i nekinta veikimas
+        var initializeAssignmentResult = Visit(context.assignment());
+        if (initializeAssignmentResult != null)
         {
-            Console.WriteLine(initializeVisitResult);
-            var expressionBooleanVisitResult = Visit(context.expression(0));
-            if (expressionBooleanVisitResult != null)
+            int AssignmentResult = (int)initializeAssignmentResult;
+            var initializeBooleanExpressionResult = Visit(context.expression(0));
+            if (initializeBooleanExpressionResult != null)
             {
-                bool expressionResult = (bool)expressionBooleanVisitResult;
-
+                bool expressionResult = (bool)initializeBooleanExpressionResult;
+                while (expressionResult)
+                {
+                    Visit(context.block());
+                    Visit(context.expression(1));
+                    initializeBooleanExpressionResult = Visit(context.expression(0));
+                    if (initializeBooleanExpressionResult != null)
+                        expressionResult = (bool)initializeBooleanExpressionResult;
+                }
+                
             }
         }
 
-        return base.VisitForBlock(context);
+        return null;
     }
 }
