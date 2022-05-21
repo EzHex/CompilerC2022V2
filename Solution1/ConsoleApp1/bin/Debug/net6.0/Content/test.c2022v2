@@ -1,4 +1,7 @@
-﻿int a[5];
-a[0] = 2;
+﻿int a = 5;
 
-print(a[0]);
+if (a < 8)
+print('a');
+else
+print('b');
+ifend;

@@ -491,6 +491,29 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         throw new Exception("Index out of range");
     }
 
+    public override object? VisitIfBlock(c2022v2Parser.IfBlockContext context)
+    {
+        if (IsTrue(context.expression()))
+        {
+            Visit(context.block());
+        }
+        else
+        {
+            foreach (var elsif in context.elseifBlock())
+            {
+                if (IsTrue(elsif.expression()))
+                {
+                    Visit(elsif.block());
+                    return null;
+                }
+            }
+
+            Visit(context.elseBlock().block());
+        }
+        
+        return null;
+    }
+
     //TODO reikia sutvarkyt while ir padaryt for
     public override object? VisitWhileBlock(c2022v2Parser.WhileBlockContext context)
     {
