@@ -1,5 +1,9 @@
-﻿a=0;
-while(a <= 50)
+﻿a=3;
+b=3.01;
 print(a);
-a++;
-whileend;
+a+=2;
+a+=2;
+b+=2.03;
+a*=3;
+print(a);
+print(b);
