@@ -34,6 +34,7 @@ expression:
     constant                                #constantExpression
 |   IDENTIFIER                              #identifierExpression
 |   IDENTIFIER unaryOp                      #unaryOpExpression
+|   IDENTIFIER '[' INTEGER ']'              #arrayExp
 |   funCall                                 #functionCallExpression
 |   '(' expression ')'                      #parenthesesExpression
 |   '!' expression                          #booleanUnaryExpression

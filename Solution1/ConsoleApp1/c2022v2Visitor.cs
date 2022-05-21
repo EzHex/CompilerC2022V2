@@ -430,8 +430,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     {
         var key = context.IDENTIFIER().GetText();
         var integ = int.Parse(context.INTEGER().GetText());
-
-        
         
         if (!Variables.ContainsKey(key))
         {
@@ -439,7 +437,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         }
         else
         {
-            
             var value = Variables[key];
             var arr = value as IEnumerable;
 
@@ -467,6 +464,31 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         }
 
         return null;
+    }
+
+    public override object? VisitArrayExp(c2022v2Parser.ArrayExpContext context)
+    {
+        var key = context.IDENTIFIER().GetText();
+        var arr = Variables[key] as IEnumerable;
+        var integ = int.Parse(context.INTEGER().GetText());
+        
+        List<object> temp = new List<object>();
+            
+        if (arr != null)
+        {
+            foreach (var VARIABLE in arr)
+            {
+                temp.Add(VARIABLE);
+            }
+        }
+
+        if (integ < temp.Count)
+        {
+            Console.WriteLine(temp[integ]);
+            return null;
+        }
+
+        throw new Exception("Index out of range");
     }
 
     //TODO reikia sutvarkyt while ir padaryt for

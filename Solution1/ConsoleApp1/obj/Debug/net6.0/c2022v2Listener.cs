@@ -71,6 +71,19 @@ public interface Ic2022v2Listener : IParseTreeListener {
 	void ExitUnaryOpExpression([NotNull] c2022v2Parser.UnaryOpExpressionContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>arrayExp</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterArrayExp([NotNull] c2022v2Parser.ArrayExpContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>arrayExp</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitArrayExp([NotNull] c2022v2Parser.ArrayExpContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by the <c>functionCallExpression</c>
 	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
 	/// </summary>

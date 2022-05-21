@@ -81,6 +81,21 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	public virtual void ExitUnaryOpExpression([NotNull] c2022v2Parser.UnaryOpExpressionContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>arrayExp</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterArrayExp([NotNull] c2022v2Parser.ArrayExpContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>arrayExp</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitArrayExp([NotNull] c2022v2Parser.ArrayExpContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by the <c>functionCallExpression</c>
 	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
 	/// <para>The default implementation does nothing.</para>

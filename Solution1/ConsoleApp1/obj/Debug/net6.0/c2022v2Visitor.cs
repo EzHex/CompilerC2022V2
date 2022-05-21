@@ -57,6 +57,14 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitUnaryOpExpression([NotNull] c2022v2Parser.UnaryOpExpressionContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by the <c>arrayExp</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitArrayExp([NotNull] c2022v2Parser.ArrayExpContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by the <c>functionCallExpression</c>
 	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
 	/// </summary>

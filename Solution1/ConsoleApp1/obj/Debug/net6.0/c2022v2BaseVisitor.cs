@@ -71,6 +71,18 @@ public partial class c2022v2BaseVisitor<Result> : AbstractParseTreeVisitor<Resul
 	public virtual Result VisitUnaryOpExpression([NotNull] c2022v2Parser.UnaryOpExpressionContext context) { return VisitChildren(context); }
 
 	/// <summary>
+	/// Visit a parse tree produced by the <c>arrayExp</c>
+	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitArrayExp([NotNull] c2022v2Parser.ArrayExpContext context) { return VisitChildren(context); }
+
+	/// <summary>
 	/// Visit a parse tree produced by the <c>functionCallExpression</c>
 	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
 	/// <para>
