@@ -22,7 +22,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     public override object? VisitConstantExpression(c2022v2Parser.ConstantExpressionContext context)
     {
         var constant = context.constant();
-        if (constant is { } con)
+        if (constant is { })
         {
             if (constant.INTEGER() is { } i)
             {
@@ -65,7 +65,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         else
         {
 
-            throw new Exception("nu va nera tokio kintamo :(");
+            throw new Exception("Identifier not found");
         }
     }
 
@@ -78,12 +78,8 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     {
         Object? val1 = Visit(context.expression(0));
         Object? val2 = Visit(context.expression(1));
-        string val3 = context.numericAddOp().GetText();
         if (val1 != null && val2 != null)
         {
-            var type1 = val1.GetType();
-            var type2 = val2.GetType();
-            
             if (val1.GetType().FullName == "System.Int32")
             {
                 if (val2.GetType().FullName == "System.Double")
@@ -94,7 +90,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 + (double)val2;
                         case "-" :
                             return (int)val1 - (double)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Int32")
@@ -105,7 +100,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 + (int)val2;
                         case "-" :
                             return (int)val1 - (int)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Char")
@@ -116,7 +110,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 + (char)val2;
                         case "-" :
                             return (int)val1 - (char)val2;
-                        default: break;
                     }
                 }
             }
@@ -130,7 +123,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 + (double)val2;
                         case "-" :
                             return (double)val1 - (double)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Int32")
@@ -141,7 +133,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 + (int)val2;
                         case "-" :
                             return (double)val1 - (int)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Char")
@@ -152,7 +143,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 + (char)val2;
                         case "-" :
                             return (double)val1 - (char)val2;
-                        default: break;
                     }
                 }
             }
@@ -166,7 +156,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)val1 + (double)val2;
                         case "-" :
                             return (char)val1 - (double)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Int32")
@@ -177,7 +166,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)((char)val1 + (int)val2);
                         case "-" :
                             return (char)((char)val1 - (int)val2);
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Char")
@@ -188,7 +176,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)((char)val1 + (char)val2);
                         case "-" :
                             return (char)((char)val1 - (char)val2);
-                        default: break;
                     }
                 }
             }
@@ -208,9 +195,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         
         if (val1 != null && val2 != null)
         {
-            var type1 = val1.GetType();
-            var type2 = val2.GetType();
-            
             if (val1.GetType().FullName == "System.Int32")
             {
                 if (val2.GetType().FullName == "System.Double")
@@ -223,7 +207,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 / (double)val2;
                         case "%" :
                             return (int)val1 % (double)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Int32")
@@ -236,7 +219,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 / (int)val2;
                         case "%" :
                             return (int)val1 % (int)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Char")
@@ -249,7 +231,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 / (char)val2;
                         case "%" :
                             return (int)val1 % (char)val2;
-                        default: break;
                     }
                 }
             }
@@ -265,7 +246,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 / (double)val2;
                         case "%" :
                             return (double)val1 % (double)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Int32")
@@ -278,7 +258,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 / (int)val2;
                         case "%" :
                             return (double)val1 % (int)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Char")
@@ -291,7 +270,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 / (char)val2;
                         case "%" :
                             return (double)val1 % (char)val2;
-                        default: break;
                     }
                 }
             }
@@ -307,7 +285,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)val1 / (double)val2;
                         case "%" :
                             return (char)val1 % (double)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Int32")
@@ -320,7 +297,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)val1 / (int)val2;
                         case "%" :
                             return (char)val1 % (int)val2;
-                        default: break;
                     }
                 }
                 if (val2.GetType().FullName == "System.Char")
@@ -333,7 +309,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)val1 / (char)val2;
                         case "%" :
                             return (char)val1 % (char)val2;
-                        default: break;
                     }
                 }
             }
@@ -368,7 +343,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             temp--;
                             Variables[identifier] = temp;
                             return temp;
-                        default: break;
                     }
                 }
 
@@ -386,7 +360,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             temp--;
                             Variables[identifier] = temp;
                             return temp;
-                        default: break;
                     }
                 }
 
@@ -404,7 +377,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             temp--;
                             Variables[identifier] = temp;
                             return temp;
-                        default: break;
                     }
                 }
             }
@@ -435,7 +407,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                         return temp;
                     default:
                         return null;
-                        ;
                 }
             }
             if (value.GetType().FullName == "System.Char")
@@ -453,7 +424,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                         return temp;
                     default:
                         return null;
-                        ;
                 }
             }
             if (value.GetType().FullName == "System.Double")
@@ -471,12 +441,11 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                         return temp;
                     default:
                         return null;
-                        ;
                 }
             }
             else
             {
-                throw new Exception("pasitart su arnu");
+                throw new Exception("Can't perform unary on selected type");
             }
         }
 
@@ -510,7 +479,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 >= (double)val2;
                         default:
                             return null;
-                            ;
                     }
                 }
                 if (val2.GetType().FullName == "System.Int32")
@@ -531,7 +499,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 >= (int)val2;
                         default:
                             return null;
-                            ;
                     }
                 }
                 if (val2.GetType().FullName == "System.Char")
@@ -552,7 +519,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 >= (char)val2;
                         default:
                             return null;
-                            ;
                     }
                 }
 
@@ -581,7 +547,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 >= (double)val2;
                         default:
                             return null;
-                            ;
                     }
                 }
                 if (val2.GetType().FullName == "System.Int32")
@@ -602,7 +567,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 >= (int)val2;
                         default:
                             return null;
-                            ;
                     }
                 }
                 if (val2.GetType().FullName == "System.Char")
@@ -623,7 +587,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 >= (char)val2;
                         default:
                             return null;
-                            ;
                     }
                 }
 
@@ -652,7 +615,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)val1 >= (double)val2;
                         default:
                             return null;
-                            ;
                     }
                 }
                 if (val2.GetType().FullName == "System.Int32")
@@ -673,7 +635,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)val1 >= (int)val2;
                         default:
                             return null;
-                            ;
                     }
                 }
                 if (val2.GetType().FullName == "System.Char")
@@ -694,7 +655,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)val1 >= (char)val2;
                         default:
                             return null;
-                            ;
                     }
                 }
 
@@ -715,7 +675,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (bool)val1 != (bool)val2;
                         default:
                             return null;
-                            ;
                     }
                 }
                 if (val2.GetType().FullName == "System.Int32")
@@ -749,11 +708,11 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     public override object? VisitArrayAssignment(c2022v2Parser.ArrayAssignmentContext context)
     {
         var key = context.IDENTIFIER().GetText();
-        var integ = int.Parse(context.INTEGER().GetText());
+        var integer = int.Parse(context.INTEGER().GetText());
         
         if (!Variables.ContainsKey(key))
         {
-            Variables[key] = new object[integ];
+            Variables[key] = new object[integer];
         }
         else
         {
@@ -773,16 +732,16 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             var exp = Visit(context.expression());
             if ( exp != null)
             {
-                temp[integ] = exp;
+                temp[integer] = exp;
 
                 Variables[key] = temp.ToArray();
                 
                 return null;
             }
 
-            var toRetun = temp[integ];
-            Console.WriteLine(toRetun.ToString());
-            return integ < temp.Count ? temp[integ].ToString() : null;
+            var toReturn = temp[integer];
+            Console.WriteLine(toReturn.ToString());
+            return integer < temp.Count ? temp[integer].ToString() : null;
         }
 
         return null;
@@ -792,7 +751,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     {
         var key = context.IDENTIFIER().GetText();
         var arr = Variables[key] as IEnumerable;
-        var integ = int.Parse(context.INTEGER().GetText());
+        var integer = int.Parse(context.INTEGER().GetText());
         
         List<object> temp = new List<object>();
             
@@ -804,9 +763,9 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             }
         }
 
-        if (integ < temp.Count)
+        if (integer < temp.Count)
         {
-            Console.WriteLine(temp[integ]);
+            Console.WriteLine(temp[integer]);
             return null;
         }
 
@@ -866,8 +825,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
     public override object? VisitMathAssignment(c2022v2Parser.MathAssignmentContext context)
     {
-        //TODO paklaust arno ar idet supporta int + double ir double + int
-        //TODO return exceptions if types arent the same and arent numbers
         var varName = context.IDENTIFIER().GetText();
         if (Variables.ContainsKey(varName))
         {
@@ -903,7 +860,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                                 castedVal %= castedVal2;
                                 Variables[varName] = castedVal;
                                 return castedVal;
-                            default: break;
                         }
                     }
                     else
@@ -939,7 +895,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                                 castedVal %= castedVal2;
                                 Variables[varName] = castedVal;
                                 return castedVal;
-                            default: break;
                         }
                     }
                     else
@@ -954,21 +909,16 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             }
 
             throw new Exception("One of the assigned operators is null");
-            return null;
         }
 
         throw new Exception("Identifier doesn't exist");
-
-        throw new Exception("Identifier not found !!!");
     }
 
     public override object? VisitForBlock(c2022v2Parser.ForBlockContext context)
     {
-        //TODO patikrinti ar vykdant veiksmus programoje su i nekinta veikimas
         var initializeAssignmentResult = Visit(context.assignment());
         if (initializeAssignmentResult != null)
         {
-            int AssignmentResult = (int)initializeAssignmentResult;
             var initializeBooleanExpressionResult = Visit(context.expression(0));
             if (initializeBooleanExpressionResult != null)
             {
