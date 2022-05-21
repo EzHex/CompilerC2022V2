@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Diagnostics;
-using System.Security.AccessControl;
 using ConsoleApp1.Content;
 
 namespace ConsoleApp1;
@@ -723,9 +721,9 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             
             if (arr != null)
             {
-                foreach (var VARIABLE in arr)
+                foreach (var variable in arr)
                 {
-                    temp.Add(VARIABLE);
+                    temp.Add(variable);
                 }
             }
 
@@ -757,9 +755,9 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             
         if (arr != null)
         {
-            foreach (var VARIABLE in arr)
+            foreach (var variable in arr)
             {
-                temp.Add(VARIABLE);
+                temp.Add(variable);
             }
         }
 
