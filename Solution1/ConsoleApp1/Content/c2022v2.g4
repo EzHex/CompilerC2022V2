@@ -17,7 +17,7 @@ arrayAssignment: (TYPE IDENTIFIER '[' INTEGER ']') | (IDENTIFIER '[' INTEGER ']'
 unaryOperation : IDENTIFIER unaryOp;
 
 funCall: TYPE IDENTIFIER '(' (expression (',' expression )*)? ')';
-bindCall : BIND '(' (IDENTIFIER (',' IDENTIFIER )*)? ')';
+bindCall : BIND '(' IDENTIFIER (',' IDENTIFIER )+ ')';
 printCall: PRINT '(' expression ')';
 
 ifBlock: 'if' '(' expression ')' block elseifBlock* elseBlock? 'ifend' ';' ;

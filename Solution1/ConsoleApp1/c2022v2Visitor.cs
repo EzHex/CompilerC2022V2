@@ -6,10 +6,18 @@ namespace ConsoleApp1;
 public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 {
     private Dictionary<string, object?> Variables { get; } = new();
+    private int bindNumber = 1;
+
+    struct bindStruct
+    {
+        public int id;
+        public object? value;
+    }
 
     public override object? VisitBindCall(c2022v2Parser.BindCallContext context)
     {
         Console.WriteLine(context.BIND().GetText());
+        
         switch (context.BIND().GetText())
         {
             case "bind" :
@@ -18,12 +26,18 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                     string variableNameString = variableName.GetText();
                     if (Variables.ContainsKey(variableNameString))
                     {
-                        Console.WriteLine("Binded {0}",variableName);
+                        Console.WriteLine($"Binded {variableName}");
+                        
+                        bindStruct b = new bindStruct();
+                        b.id = bindNumber;
+                        b.value = Variables[variableNameString];
+
+                        Variables[variableNameString] = b;
                     }
                     else
                         throw new Exception("Variable not found !!!");
                 }
-
+                bindNumber++;
                 break;
             case "unbind" :
                 foreach (var variableName in context.IDENTIFIER())
@@ -31,12 +45,14 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                     string variableNameString = variableName.GetText();
                     if (Variables.ContainsKey(variableNameString))
                     {
-                        Console.WriteLine("Unbinded {0}",variableName);
+                        Console.WriteLine($"Unbinded {variableName}");
+                        var b = (bindStruct)Variables[variableNameString]!;
+                        Variables[variableNameString] = b.value;
                     }
                     else
                         throw new Exception("Variable not found !!!");
                 }
-
+                
                 break;
         }
         
@@ -114,6 +130,198 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         Object? val2 = Visit(context.expression(1));
         if (val1 != null && val2 != null)
         {
+            if (val1.GetType().FullName == "ConsoleApp1.C2022V2Visitor+bindStruct")
+            {
+                bindStruct b = (bindStruct)val1;
+                
+                if (val2.GetType().FullName == "System.Int32")
+                {
+                    switch (context.numericAddOp().GetText())
+                    {
+                        case "+" :
+                            foreach (var i in Variables)
+                            {
+                                if (i.Value is bindStruct)
+                                {
+                                    if (i.Value != null)
+                                    {
+                                        bindStruct tempBind = (bindStruct)i.Value!;
+                                        if (tempBind.id == b.id)
+                                        {
+                                            int tempTemp = (int)tempBind.value!;
+                                            tempTemp+=(int)val2;
+                                            tempBind.value = tempTemp;
+                                            Variables[i.Key] = tempBind;
+                                        }
+                                    }
+                                }
+                            }
+                            return Variables[context.expression(0).GetText()];
+                        case "-" :
+                            foreach (var i in Variables)
+                            {
+                                if (i.Value is bindStruct)
+                                {
+                                    if (i.Value != null)
+                                    {
+                                        bindStruct tempBind = (bindStruct)i.Value!;
+                                        if (tempBind.id == b.id)
+                                        {
+                                            int tempTemp = (int)tempBind.value!;
+                                            tempTemp-=(int)val2;
+                                            tempBind.value = tempTemp;
+                                            Variables[i.Key] = tempBind;
+                                        }
+                                    }
+                                }
+                            }
+                            return Variables[context.expression(0).GetText()];
+                    }
+                }
+                
+                if (val2.GetType().FullName == "System.Double")
+                {
+                    switch (context.numericAddOp().GetText())
+                    {
+                        case "+" :
+                            foreach (var i in Variables)
+                            {
+                                if (i.Value is bindStruct)
+                                {
+                                    if (i.Value != null)
+                                    {
+                                        bindStruct tempBind = (bindStruct)i.Value!;
+                                        if (tempBind.id == b.id)
+                                        {
+                                            double tempTemp = (double)tempBind.value!;
+                                            tempTemp+=(double)val2;
+                                            tempBind.value = tempTemp;
+                                            Variables[i.Key] = tempBind;
+                                        }
+                                    }
+                                }
+                            }
+                            return Variables[context.expression(0).GetText()];
+                        case "-" :
+                            foreach (var i in Variables)
+                            {
+                                if (i.Value is bindStruct)
+                                {
+                                    if (i.Value != null)
+                                    {
+                                        bindStruct tempBind = (bindStruct)i.Value!;
+                                        if (tempBind.id == b.id)
+                                        {
+                                            double tempTemp = (double)tempBind.value!;
+                                            tempTemp-=(double)val2;
+                                            tempBind.value = tempTemp;
+                                            Variables[i.Key] = tempBind;
+                                        }
+                                    }
+                                }
+                            }
+                            return Variables[context.expression(0).GetText()];
+                    }
+                }
+                
+            }
+            
+            if (val2.GetType().FullName == "ConsoleApp1.C2022V2Visitor+bindStruct")
+            {
+                bindStruct b = (bindStruct)val2;
+                
+                if (val1.GetType().FullName == "System.Int32")
+                {
+                    switch (context.numericAddOp().GetText())
+                    {
+                        case "+" :
+                            foreach (var i in Variables)
+                            {
+                                if (i.Value is bindStruct)
+                                {
+                                    if (i.Value != null)
+                                    {
+                                        bindStruct tempBind = (bindStruct)i.Value!;
+                                        if (tempBind.id == b.id)
+                                        {
+                                            int tempTemp = (int)tempBind.value!;
+                                            tempTemp+=(int)val1;
+                                            tempBind.value = tempTemp;
+                                            Variables[i.Key] = tempBind;
+                                        }
+                                    }
+                                }
+                            }
+                            return Variables[context.expression(1).GetText()];
+                        case "-" :
+                            foreach (var i in Variables)
+                            {
+                                if (i.Value is bindStruct)
+                                {
+                                    if (i.Value != null)
+                                    {
+                                        bindStruct tempBind = (bindStruct)i.Value!;
+                                        if (tempBind.id == b.id)
+                                        {
+                                            int tempTemp = (int)tempBind.value!;
+                                            tempTemp-=(int)val1;
+                                            tempBind.value = tempTemp;
+                                            Variables[i.Key] = tempBind;
+                                        }
+                                    }
+                                }
+                            }
+                            return Variables[context.expression(1).GetText()];
+                    }
+                }
+                
+                if (val1.GetType().FullName == "System.Double")
+                {
+                    switch (context.numericAddOp().GetText())
+                    {
+                        case "+" :
+                            foreach (var i in Variables)
+                            {
+                                if (i.Value is bindStruct)
+                                {
+                                    if (i.Value != null)
+                                    {
+                                        bindStruct tempBind = (bindStruct)i.Value!;
+                                        if (tempBind.id == b.id)
+                                        {
+                                            double tempTemp = (double)tempBind.value!;
+                                            tempTemp += (double)val1;
+                                            tempBind.value = tempTemp;
+                                            Variables[i.Key] = tempBind;
+                                        }
+                                    }
+                                }
+                            }
+                            return Variables[context.expression(1).GetText()];
+                        case "-" :
+                            foreach (var i in Variables)
+                            {
+                                if (i.Value is bindStruct)
+                                {
+                                    if (i.Value != null)
+                                    {
+                                        bindStruct tempBind = (bindStruct)i.Value!;
+                                        if (tempBind.id == b.id)
+                                        {
+                                            double tempTemp = (double)tempBind.value!;
+                                            tempTemp-=(double)val1;
+                                            tempBind.value = tempTemp;
+                                            Variables[i.Key] = tempBind;
+                                        }
+                                    }
+                                }
+                            }
+                            return Variables[context.expression(1).GetText()];
+                    }
+                }
+                
+            }
+            
             if (val1.GetType().FullName == "System.Int32")
             {
                 if (val2.GetType().FullName == "System.Double")
@@ -136,16 +344,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 - (int)val2;
                     }
                 }
-                if (val2.GetType().FullName == "System.Char")
-                {
-                    switch (context.numericAddOp().GetText())
-                    {
-                        case "+" :
-                            return (int)val1 + (char)val2;
-                        case "-" :
-                            return (int)val1 - (char)val2;
-                    }
-                }
+                
             }
             else if (val1.GetType().FullName == "System.Double")
             {
@@ -229,6 +428,9 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         
         if (val1 != null && val2 != null)
         {
+            
+            
+            
             if (val1.GetType().FullName == "System.Int32")
             {
                 if (val2.GetType().FullName == "System.Double")
@@ -363,6 +565,104 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             var value = Variables[identifier];
             if (value != null)
             {
+                if (value.GetType().FullName == "ConsoleApp1.C2022V2Visitor+bindStruct")
+                {
+                    bindStruct b = (bindStruct)value;
+                    if (b.value!.GetType().FullName == "System.Int32")
+                    {
+                        switch (context.unaryOp().GetText())
+                        {
+                            case "++":
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                int tempTemp = (int)tempBind.value!;
+                                                tempTemp++;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return null;
+                            case "--":
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                int tempTemp = (int)tempBind.value!;
+                                                tempTemp--;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return null;
+                            default:
+                                return null;
+                        }
+                    }
+                    
+                    if (b.value!.GetType().FullName == "System.Double")
+                    {
+                        switch (context.unaryOp().GetText())
+                        {
+                            case "++":
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp++;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return null;
+                            case "--":
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp--;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return null;
+                            default:
+                                return null;
+                        }
+                    }
+                }
+                
                 if (value.GetType().FullName == "System.Double")
                 {
                     switch (context.unaryOp().GetText())
@@ -426,9 +726,107 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         var value = Variables[identifier];
         if (value != null)
         {
+            if (value.GetType().FullName == "ConsoleApp1.C2022V2Visitor+bindStruct")
+                {
+                    bindStruct b = (bindStruct)value;
+                    if (b.value!.GetType().FullName == "System.Int32")
+                    {
+                        switch (context.unaryOp().GetText())
+                        {
+                            case "++":
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                int tempTemp = (int)tempBind.value!;
+                                                tempTemp++;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return null;
+                            case "--":
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                int tempTemp = (int)tempBind.value!;
+                                                tempTemp--;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return null;
+                            default:
+                                return null;
+                        }
+                    }
+                    
+                    if (b.value!.GetType().FullName == "System.Double")
+                    {
+                        switch (context.unaryOp().GetText())
+                        {
+                            case "++":
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp++;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return null;
+                            case "--":
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp--;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return null;
+                            default:
+                                return null;
+                        }
+                    }
+                }
+            
             if (value.GetType().FullName == "System.Int32")
             {
-               int  temp = (int)value;
+                int temp = (int)value;
                 switch (context.unaryOp().GetText())
                 {
                     case "++":
@@ -733,8 +1131,19 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     {
         if (Visit(context.expression()) is { } c)
         {
-            string? text = c.ToString();
-            Console.WriteLine(text);
+            if (c is bindStruct)
+            {
+                bindStruct b = (bindStruct)c;
+                string? text = b.value!.ToString();
+                Console.WriteLine(text);
+            }
+            else
+            {
+                string? text = c.ToString();
+                Console.WriteLine(text);
+            }
+            
+            
         }
         return null;
     }
