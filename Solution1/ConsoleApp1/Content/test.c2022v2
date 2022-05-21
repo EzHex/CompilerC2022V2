@@ -1,7 +1,5 @@
-﻿int a = 5;
-
-if (a < 8)
-print('a');
-else
-print('b');
-ifend;
+﻿a=0;
+while(a <= 50)
+print(a);
+a++;
+whileend;
