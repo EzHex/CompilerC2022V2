@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compulerv2\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -128,18 +128,18 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitProgram([NotNull] c2022v2Parser.ProgramContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.funMain"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFunMain([NotNull] c2022v2Parser.FunMainContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.line"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitLine([NotNull] c2022v2Parser.LineContext context);
-
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="c2022v2Parser.mainBlock"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitMainBlock([NotNull] c2022v2Parser.MainBlockContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.funcDeclaration"/>.

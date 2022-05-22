@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compulerv2\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -214,6 +214,19 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	public virtual void ExitProgram([NotNull] c2022v2Parser.ProgramContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.funMain"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFunMain([NotNull] c2022v2Parser.FunMainContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.funMain"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFunMain([NotNull] c2022v2Parser.FunMainContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.line"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -225,19 +238,6 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitLine([NotNull] c2022v2Parser.LineContext context) { }
-
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="c2022v2Parser.mainBlock"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterMainBlock([NotNull] c2022v2Parser.MainBlockContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="c2022v2Parser.mainBlock"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitMainBlock([NotNull] c2022v2Parser.MainBlockContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.funcDeclaration"/>.

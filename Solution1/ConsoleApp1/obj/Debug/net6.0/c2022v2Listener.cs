@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\modes\OneDrive\Stalinis kompiuteris\Compulerv2\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
+// Generated from D:\KTUOneDrive\OneDrive - Kaunas University of Technology\4pusmetis\Programavimo kalbų teorija\Compiler\CompilerC2022V2\Solution1\ConsoleApp1\Content\c2022v2.g4 by ANTLR 4.6.6
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -186,6 +186,17 @@ public interface Ic2022v2Listener : IParseTreeListener {
 	void ExitProgram([NotNull] c2022v2Parser.ProgramContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.funMain"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFunMain([NotNull] c2022v2Parser.FunMainContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.funMain"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFunMain([NotNull] c2022v2Parser.FunMainContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.line"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -195,17 +206,6 @@ public interface Ic2022v2Listener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitLine([NotNull] c2022v2Parser.LineContext context);
-
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="c2022v2Parser.mainBlock"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterMainBlock([NotNull] c2022v2Parser.MainBlockContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="c2022v2Parser.mainBlock"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitMainBlock([NotNull] c2022v2Parser.MainBlockContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.funcDeclaration"/>.

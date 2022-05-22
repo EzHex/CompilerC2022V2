@@ -1,15 +1,13 @@
-﻿main:
-int a = 2;
-int b = 3;
-bind(a,b);
-a++;
-print(a);
-print(b);
-a*=3;
-print(a);
-print(b);
-unbind(a,b);
-b++;
-print(a);
-print(b);
-endmain;
+﻿fun setGToFive ()
+int g = 5;
+endFun;
+
+fun aTimesFive(a)
+a *= 5;
+endFun;
+
+main:
+setGToFive();
+aTimesFive(g);
+print(g);
+endMain;

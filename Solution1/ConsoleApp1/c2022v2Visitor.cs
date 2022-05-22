@@ -7,6 +7,8 @@ namespace ConsoleApp1;
 public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 {
     private Dictionary<string, object?> Variables { get; } = new();
+    private Dictionary<string, c2022v2Parser.FuncDeclarationContext> Funs { get; } = new();
+
     private int bindNumber = 1;
 
     struct bindStruct
@@ -19,6 +21,66 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     {
         public string type;
         public object? value;
+    }
+
+    public override object? VisitFuncDeclaration(c2022v2Parser.FuncDeclarationContext context)
+    {
+        var funName = context.IDENTIFIER(0).GetText();
+        var count = context.IDENTIFIER().Length;
+        
+        for (int i = 1; i < count; i++)
+        {
+            Variables[$"{funName}_{context.IDENTIFIER(i).GetText()}"] = null;
+        }
+
+        if (!Funs.ContainsKey(funName))
+        {
+            Funs[funName] = context;
+        }
+        else
+        {
+            throw new Exception($"Fun with {funName} identifier already exist");
+        }
+        
+        return null;
+    }
+
+    public override object? VisitFunCall(c2022v2Parser.FunCallContext context)
+    {
+        var funName = context.IDENTIFIER(0).GetText();
+        
+        
+        if (Funs.ContainsKey(funName))
+        {
+            var funContext = Funs[funName];
+
+            if (funContext.IDENTIFIER().Length != context.IDENTIFIER().Length)
+            {
+                throw new Exception("Fun was called with not enough arguments");
+            }
+
+            var count = funContext.IDENTIFIER().Length;
+            for (int i = 1; i < count; i++)
+            {
+                Variables[$"{funName}_{funContext.IDENTIFIER(i).GetText()}"] = Variables[context.IDENTIFIER(i).GetText()];
+            }
+            
+            foreach (var line in funContext.line())
+            {
+                Visit(line);
+            }
+            
+            for (int i = 1; i < count; i++)
+            {
+                Variables[context.IDENTIFIER(i).GetText()] = Variables[$"{funName}_{funContext.IDENTIFIER(i).GetText()}"];
+            }
+        }
+        else
+        {
+            throw new Exception($"Fun with {funName} identifier does not exist");
+        }
+        
+        return null;
     }
 
     public override object? VisitBindCall(c2022v2Parser.BindCallContext context)

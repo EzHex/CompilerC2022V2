@@ -1,14 +1,13 @@
 ﻿grammar c2022v2;
 
+program: funMain* EOF;
 
-program:'main:' line* 'endmain;' EOF;
-
-line: 
-    mainBlock
+funMain:
+    'main:' line* 'endMain' ';'
 |   funcDeclaration
 ;
 
-mainBlock:
+line:
     statement
 |   funCall
 |   ifBlock 
@@ -16,9 +15,9 @@ mainBlock:
 |   whileBlock
 ;
 
-funcDeclaration
- : 'fun' IDENTIFIER statement* 'endfun'
- ;
+funcDeclaration:
+   'fun' IDENTIFIER '(' (IDENTIFIER (',' IDENTIFIER)* )? ')' line* 'endFun' ';'
+;
 
 statement: (mathAssignment|assignment|arrayAssignment|funCall|printCall|bindCall|unaryOperation) ';';
 
@@ -30,7 +29,7 @@ arrayAssignment: (TYPE IDENTIFIER '[' expression ']') | (IDENTIFIER '[' (express
 
 unaryOperation : IDENTIFIER unaryOp;
 
-funCall: TYPE IDENTIFIER '(' (expression (',' expression )*)? ')';
+funCall: IDENTIFIER '(' (IDENTIFIER (',' IDENTIFIER)* )? ')';
 bindCall : BIND '(' IDENTIFIER (',' IDENTIFIER )+ ')';
 printCall: PRINT '(' expression ')';
 
