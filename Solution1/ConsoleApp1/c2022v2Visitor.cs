@@ -428,8 +428,541 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         
         if (val1 != null && val2 != null)
         {
+            if (val1.GetType().FullName == "ConsoleApp1.C2022V2Visitor+bindStruct")
+            {
+                bindStruct b = (bindStruct)val1;
+
+                if (b.value!.GetType().FullName == "System.Int32")
+                {
+                    if (val2.GetType().FullName == "System.Int32")
+                    {
+                        switch (context.numericMultiOp().GetText())
+                        {
+                            case "*" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                int tempTemp = (int)tempBind.value!;
+                                                tempTemp*=(int)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "/" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                int tempTemp = (int)tempBind.value!;
+                                                tempTemp/=(int)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "%" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                int tempTemp = (int)tempBind.value!;
+                                                tempTemp%=(int)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                        }
+                    }
+                    
+                    if (val2.GetType().FullName == "System.Double")
+                    {
+                        switch (context.numericMultiOp().GetText())
+                        {
+                            case "*" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp*=(double)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "/" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp/=(double)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "%" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp%=(double)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                        }
+                    }
+                }
+
+                if (b.value!.GetType().FullName == "System.Double")
+                {
+                    if (val2.GetType().FullName == "System.Int32")
+                    {
+                        switch (context.numericMultiOp().GetText())
+                        {
+                            case "*" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp*=(int)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "/" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp/=(int)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "%" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp%=(int)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                        }
+                    }
+                
+                    if (val2.GetType().FullName == "System.Double")
+                    {
+                        switch (context.numericMultiOp().GetText())
+                        {
+                            case "*" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp*=(double)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "/" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp/=(double)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "%" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp%=(double)val2;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                        }
+                    }
+                }
+
+            }
             
-            
+            if (val2.GetType().FullName == "ConsoleApp1.C2022V2Visitor+bindStruct")
+            {
+                bindStruct b = (bindStruct)val2;
+                
+                if (b.value!.GetType().FullName == "System.Int32")
+                {
+                    if (val1.GetType().FullName == "System.Int32")
+                    {
+                        switch (context.numericMultiOp().GetText())
+                        {
+                            case "*" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                int tempTemp = (int)tempBind.value!;
+                                                tempTemp*=(int)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "/" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                int tempTemp = (int)tempBind.value!;
+                                                tempTemp/=(int)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "%" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                int tempTemp = (int)tempBind.value!;
+                                                tempTemp%=(int)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                        }
+                    }
+                    
+                    if (val1.GetType().FullName == "System.Double")
+                    {
+                        switch (context.numericMultiOp().GetText())
+                        {
+                            case "*" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp*=(double)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "/" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp/=(double)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                            case "%" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp%=(double)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(0).GetText()];
+                        }
+                    }
+                }
+
+                if (b.value!.GetType().FullName == "System.Double")
+                {
+                    if (val1.GetType().FullName == "System.Int32")
+                    {
+                        switch (context.numericMultiOp().GetText())
+                        {
+                            case "*" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp*=(int)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(1).GetText()];
+                            case "/" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp/=(int)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(1).GetText()];
+                            case "%" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp%=(int)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(1).GetText()];
+                        }
+                    }
+                
+                    if (val1.GetType().FullName == "System.Double")
+                    {
+                        switch (context.numericMultiOp().GetText())
+                        {
+                            case "*" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp*=(double)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(1).GetText()];
+                            case "/" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp/=(double)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(1).GetText()];
+                            case "%" :
+                                foreach (var i in Variables)
+                                {
+                                    if (i.Value is bindStruct)
+                                    {
+                                        if (i.Value != null)
+                                        {
+                                            bindStruct tempBind = (bindStruct)i.Value!;
+                                            if (tempBind.id == b.id)
+                                            {
+                                                double tempTemp = (double)tempBind.value!;
+                                                tempTemp%=(double)val1;
+                                                tempBind.value = tempTemp;
+                                                Variables[i.Key] = tempBind;
+                                            }
+                                        }
+                                    }
+                                }
+                                return Variables[context.expression(1).GetText()];
+                        }
+                    }
+                }
+                
+            }
             
             if (val1.GetType().FullName == "System.Int32")
             {
@@ -550,7 +1083,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             }
             else
             {
-                throw new Exception("Variables stated cannot be added or subtracted");
+                throw new Exception("Variables stated cannot be multiplied or divided");
             }
         }
 
@@ -1275,6 +1808,252 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             var val2 = Visit(context.expression());
             if (val1 != null && val2 != null)
             {
+                if (val1.GetType().FullName == "ConsoleApp1.C2022V2Visitor+bindStruct")
+                {
+                    bindStruct b = (bindStruct)val1;
+                    if (b.value!.GetType().FullName == "System.Int32")
+                    {
+                        if (val2.GetType().FullName == "System.Int32")
+                        {
+                            int castedVal1 = (int)b.value!;
+                            int castedVal2 = (int)val2;
+
+                            switch (context.numericAss().GetText())
+                            {
+                                case "+=":
+                                    foreach (var i in Variables)
+                                    {
+                                        if (i.Value is bindStruct)
+                                        {
+                                            if (i.Value != null)
+                                            {
+                                                bindStruct tempBind = (bindStruct)i.Value!;
+                                                if (tempBind.id == b.id)
+                                                {
+                                                    int tempTemp = (int)tempBind.value!;
+                                                    tempTemp += (int)val2;
+                                                    tempBind.value = tempTemp;
+                                                    Variables[i.Key] = tempBind;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return Variables[context.IDENTIFIER().GetText()];
+                                case "-=":
+                                    foreach (var i in Variables)
+                                    {
+                                        if (i.Value is bindStruct)
+                                        {
+                                            if (i.Value != null)
+                                            {
+                                                bindStruct tempBind = (bindStruct)i.Value!;
+                                                if (tempBind.id == b.id)
+                                                {
+                                                    int tempTemp = (int)tempBind.value!;
+                                                    tempTemp -= (int)val2;
+                                                    tempBind.value = tempTemp;
+                                                    Variables[i.Key] = tempBind;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return Variables[context.IDENTIFIER().GetText()];
+                                case "*=":
+                                    foreach (var i in Variables)
+                                    {
+                                        if (i.Value is bindStruct)
+                                        {
+                                            if (i.Value != null)
+                                            {
+                                                bindStruct tempBind = (bindStruct)i.Value!;
+                                                if (tempBind.id == b.id)
+                                                {
+                                                    int tempTemp = (int)tempBind.value!;
+                                                    tempTemp *= (int)val2;
+                                                    tempBind.value = tempTemp;
+                                                    Variables[i.Key] = tempBind;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return Variables[context.IDENTIFIER().GetText()];
+                                case "/=":
+                                    foreach (var i in Variables)
+                                    {
+                                        if (i.Value is bindStruct)
+                                        {
+                                            if (i.Value != null)
+                                            {
+                                                bindStruct tempBind = (bindStruct)i.Value!;
+                                                if (tempBind.id == b.id)
+                                                {
+                                                    int tempTemp = (int)tempBind.value!;
+                                                    tempTemp /= (int)val2;
+                                                    tempBind.value = tempTemp;
+                                                    Variables[i.Key] = tempBind;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return Variables[context.IDENTIFIER().GetText()];
+                                case "%=":
+                                    foreach (var i in Variables)
+                                    {
+                                        if (i.Value is bindStruct)
+                                        {
+                                            if (i.Value != null)
+                                            {
+                                                bindStruct tempBind = (bindStruct)i.Value!;
+                                                if (tempBind.id == b.id)
+                                                {
+                                                    int tempTemp = (int)tempBind.value!;
+                                                    tempTemp %= (int)val2;
+                                                    tempBind.value = tempTemp;
+                                                    Variables[i.Key] = tempBind;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return Variables[context.IDENTIFIER().GetText()];
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception(
+                                "Mathematical assign operations can only be between two numbers types of the same type(int32)");
+                        }
+                    }
+                    else if (b.value!.GetType().FullName == "System.Double")
+                    {
+                        if (val2.GetType().FullName == "System.Double")
+                        {
+                            double castedVal1 = (double)b.value!;
+                            double castedVal2 = (double)val2;
+
+                            switch (context.numericAss().GetText())
+                            {
+                                case "+=":
+                                    foreach (var i in Variables)
+                                    {
+                                        if (i.Value is bindStruct)
+                                        {
+                                            if (i.Value != null)
+                                            {
+                                                bindStruct tempBind = (bindStruct)i.Value!;
+                                                if (tempBind.id == b.id)
+                                                {
+                                                    double tempTemp = (double)tempBind.value!;
+                                                    tempTemp += (double)val2;
+                                                    tempBind.value = tempTemp;
+                                                    Variables[i.Key] = tempBind;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return Variables[context.IDENTIFIER().GetText()];
+                                case "-=":
+                                    foreach (var i in Variables)
+                                    {
+                                        if (i.Value is bindStruct)
+                                        {
+                                            if (i.Value != null)
+                                            {
+                                                bindStruct tempBind = (bindStruct)i.Value!;
+                                                if (tempBind.id == b.id)
+                                                {
+                                                    double tempTemp = (double)tempBind.value!;
+                                                    tempTemp -= (double)val2;
+                                                    tempBind.value = tempTemp;
+                                                    Variables[i.Key] = tempBind;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return Variables[context.IDENTIFIER().GetText()];
+                                case "*=":
+                                    foreach (var i in Variables)
+                                    {
+                                        if (i.Value is bindStruct)
+                                        {
+                                            if (i.Value != null)
+                                            {
+                                                bindStruct tempBind = (bindStruct)i.Value!;
+                                                if (tempBind.id == b.id)
+                                                {
+                                                    double tempTemp = (double)tempBind.value!;
+                                                    tempTemp *= (double)val2;
+                                                    tempBind.value = tempTemp;
+                                                    Variables[i.Key] = tempBind;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return Variables[context.IDENTIFIER().GetText()];
+                                case "/=":
+                                    foreach (var i in Variables)
+                                    {
+                                        if (i.Value is bindStruct)
+                                        {
+                                            if (i.Value != null)
+                                            {
+                                                bindStruct tempBind = (bindStruct)i.Value!;
+                                                if (tempBind.id == b.id)
+                                                {
+                                                    double tempTemp = (double)tempBind.value!;
+                                                    tempTemp /= (double)val2;
+                                                    tempBind.value = tempTemp;
+                                                    Variables[i.Key] = tempBind;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return Variables[context.IDENTIFIER().GetText()];
+                                case "%=":
+                                    foreach (var i in Variables)
+                                    {
+                                        if (i.Value is bindStruct)
+                                        {
+                                            if (i.Value != null)
+                                            {
+                                                bindStruct tempBind = (bindStruct)i.Value!;
+                                                if (tempBind.id == b.id)
+                                                {
+                                                    double tempTemp = (double)tempBind.value!;
+                                                    tempTemp %= (double)val2;
+                                                    tempBind.value = tempTemp;
+                                                    Variables[i.Key] = tempBind;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    return Variables[context.IDENTIFIER().GetText()];
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception(
+                                "Mathematical assign operations can only be between two numbers types of the same type");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception(
+                            "Bind does not support this type");
+                    }
+
+                    
+                }
+                
                 if (val1.GetType().FullName == "System.Int32")
                 {
                     if (val2.GetType().FullName == "System.Int32")
@@ -1307,7 +2086,8 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                     }
                     else
                     {
-                        throw new Exception("Mathematical assign operations can only be between two numbers types of the same type(int32)");
+                        throw new Exception(
+                            "Mathematical assign operations can only be between two numbers types of the same type(int32)");
                     }
                 }
                 else if (val1.GetType().FullName == "System.Double")
@@ -1342,19 +2122,23 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                     }
                     else
                     {
-                        throw new Exception("Mathematical assign operations can only be between two numbers types of the same type(double)");
+                        throw new Exception(
+                            "Mathematical assign operations can only be between two numbers types of the same type(double)");
                     }
                 }
                 else
                 {
-                    throw new Exception("Mathematical assign operations can only be between two numbers types of the same type");
+                    throw new Exception(
+                        "Mathematical assign operations can only be between two numbers types of the same type");
                 }
+
+                throw new Exception("One of the assigned operators is null");
             }
 
-            throw new Exception("One of the assigned operators is null");
+            throw new Exception("Identifier doesn't exist");
         }
 
-        throw new Exception("Identifier doesn't exist");
+        return null;
     }
 
     public override object? VisitForBlock(c2022v2Parser.ForBlockContext context)
