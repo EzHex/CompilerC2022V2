@@ -1,13 +1,25 @@
-﻿fun setGToFive ()
-int g = 5;
+﻿fun aTimesFive()
+print('a');
 endFun;
 
-fun aTimesFive(a)
-a *= 5;
+fun setGToFive ()
+print('w');
 endFun;
+
+fun FibonacciArr (array , arrayLength)
+for(int i = 2; i < arrayLength; i++)
+print(i);
+array[i] = array[i-1] + array[i-2];
+forend;
+print(array[i]);
+endFun;
+
 
 main:
+int a[10];
+a[0] = 1;
+a[1] = 2;
+b=10;
+FibonacciArr(a,b);
 setGToFive();
-aTimesFive(g);
-print(g);
 endMain;

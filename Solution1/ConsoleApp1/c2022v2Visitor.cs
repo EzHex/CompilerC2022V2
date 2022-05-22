@@ -6,6 +6,7 @@ namespace ConsoleApp1;
 
 public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 {
+    private string CurrentScope = "main_";
     private Dictionary<string, object?> Variables { get; } = new();
     private Dictionary<string, c2022v2Parser.FuncDeclarationContext> Funs { get; } = new();
 
@@ -26,11 +27,12 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     public override object? VisitFuncDeclaration(c2022v2Parser.FuncDeclarationContext context)
     {
         var funName = context.IDENTIFIER(0).GetText();
+        funName += "_" + CurrentScope;
         var count = context.IDENTIFIER().Length;
         
         for (int i = 1; i < count; i++)
         {
-            Variables[$"{funName}_{context.IDENTIFIER(i).GetText()}"] = null;
+            Variables[$"{funName}{context.IDENTIFIER(i).GetText()}"] = null;
         }
 
         if (!Funs.ContainsKey(funName))
@@ -47,9 +49,8 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
     public override object? VisitFunCall(c2022v2Parser.FunCallContext context)
     {
-        var funName = context.IDENTIFIER(0).GetText();
-        
-        
+        var startScope = CurrentScope;
+        var funName =context.IDENTIFIER(0).GetText() + "_" + CurrentScope ;
         if (Funs.ContainsKey(funName))
         {
             var funContext = Funs[funName];
@@ -62,18 +63,28 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             var count = funContext.IDENTIFIER().Length;
             for (int i = 1; i < count; i++)
             {
-                Variables[$"{funName}_{funContext.IDENTIFIER(i).GetText()}"] = Variables[context.IDENTIFIER(i).GetText()];
+                if (Variables.ContainsKey(startScope + context.IDENTIFIER(i).GetText()))
+                {
+                    Variables[$"{funName}{funContext.IDENTIFIER(i).GetText()}"] =
+                        Variables[startScope + context.IDENTIFIER(i).GetText()];
+                }
+                else
+                {
+                    throw new Exception("Argument given in function call doesn't exist (isn't initialized");
+                }
             }
             
             foreach (var line in funContext.line())
             {
+                CurrentScope = funName;
                 Visit(line);
             }
-            
+
             for (int i = 1; i < count; i++)
             {
-                Variables[context.IDENTIFIER(i).GetText()] = Variables[$"{funName}_{funContext.IDENTIFIER(i).GetText()}"];
+                Variables[startScope + context.IDENTIFIER(i).GetText()] = Variables[$"{funName}{funContext.IDENTIFIER(i).GetText()}"];
             }
+            CurrentScope = CurrentScope.Substring(CurrentScope.IndexOf("_")+1);
         }
         else
         {
@@ -93,15 +104,15 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                 foreach (var variableName in context.IDENTIFIER())
                 {
                     string variableNameString = variableName.GetText();
-                    if (Variables.ContainsKey(variableNameString))
+                    if (Variables.ContainsKey(CurrentScope + variableNameString))
                     {
                         Console.WriteLine($"Binded {variableName}");
                         
                         bindStruct b = new bindStruct();
                         b.id = bindNumber;
-                        b.value = Variables[variableNameString];
+                        b.value = Variables[CurrentScope + variableNameString];
 
-                        Variables[variableNameString] = b;
+                        Variables[CurrentScope + variableNameString] = b;
                     }
                     else
                         throw new Exception("Variable not found !!!");
@@ -112,11 +123,11 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                 foreach (var variableName in context.IDENTIFIER())
                 {
                     string variableNameString = variableName.GetText();
-                    if (Variables.ContainsKey(variableNameString))
+                    if (Variables.ContainsKey(CurrentScope + variableNameString))
                     {
                         Console.WriteLine($"Unbinded {variableName}");
-                        var b = (bindStruct)Variables[variableNameString]!;
-                        Variables[variableNameString] = b.value;
+                        var b = (bindStruct)Variables[CurrentScope + variableNameString]!;
+                        Variables[CurrentScope + variableNameString] = b.value;
                     }
                     else
                         throw new Exception("Variable not found !!!");
@@ -130,7 +141,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
     public override object? VisitAssignment(c2022v2Parser.AssignmentContext context)
     {
-        var varName = context.IDENTIFIER().GetText();
+        var varName = CurrentScope + context.IDENTIFIER().GetText();
         var value = Visit(context.expression());
 
         Variables[varName] = value;
@@ -175,7 +186,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
     public override object? VisitIdentifierExpression(c2022v2Parser.IdentifierExpressionContext context)
     {
-        var varName = context.IDENTIFIER().GetText();
+        var varName = CurrentScope + context.IDENTIFIER().GetText();
         if (Variables.ContainsKey(varName))
         {
             var value = Variables[varName]; 
@@ -1161,7 +1172,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
     public override object? VisitUnaryOperation(c2022v2Parser.UnaryOperationContext context)
     {
-        var identifier = context.IDENTIFIER().GetText();
+        var identifier = CurrentScope +  context.IDENTIFIER().GetText();
         if (Variables.ContainsKey(identifier))
         {
             var value = Variables[identifier];
@@ -1319,12 +1330,16 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
             return value;
         }
+        else
+        {
+            throw new Exception("Trying to do an unary opperation on a variable which doesn't exist");
+        }
         return base.VisitUnaryOperation(context);
     }
 
     public override object? VisitUnaryOpExpression(c2022v2Parser.UnaryOpExpressionContext context)
     {
-        var identifier = context.IDENTIFIER().GetText();
+        var identifier = CurrentScope  + context.IDENTIFIER().GetText();
         var value = Variables[identifier];
         if (value != null)
         {
@@ -1758,7 +1773,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     {
         if (context.TYPE() != null)
         {
-            var key = context.IDENTIFIER().GetText();
+            var key =CurrentScope + context.IDENTIFIER().GetText();
             var visitedExpression = Visit(context.expression(0));
             if (visitedExpression != null)
             {
@@ -1790,7 +1805,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         }
         else
         {
-            var key = context.IDENTIFIER().GetText();
+            var key =CurrentScope + context.IDENTIFIER().GetText();
             var visitFirstExpression = Visit(context.expression(0));
             var visitSecondExpression = Visit(context.expression(1));
             if (Variables.ContainsKey(key))
@@ -1877,7 +1892,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
     public override object? VisitArrayExp(c2022v2Parser.ArrayExpContext context)
     {
-        var key = context.IDENTIFIER().GetText();
+        var key = CurrentScope + context.IDENTIFIER().GetText();
         var arrayStruct = Variables[key];
         var visitExpression = Visit(context.expression());
         if (visitExpression != null)
@@ -1971,7 +1986,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
 
     public override object? VisitMathAssignment(c2022v2Parser.MathAssignmentContext context)
     {
-        var varName = context.IDENTIFIER().GetText();
+        var varName = CurrentScope + context.IDENTIFIER().GetText();
         if (Variables.ContainsKey(varName))
         {
             var val1 = Variables[varName];
@@ -2049,7 +2064,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                                         }
                                     }
 
-                                    return Variables[context.IDENTIFIER().GetText()];
+                                    return Variables[CurrentScope + context.IDENTIFIER().GetText()];
                                 case "/=":
                                     foreach (var i in Variables)
                                     {
@@ -2069,7 +2084,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                                         }
                                     }
 
-                                    return Variables[context.IDENTIFIER().GetText()];
+                                    return Variables[CurrentScope + context.IDENTIFIER().GetText()];
                                 case "%=":
                                     foreach (var i in Variables)
                                     {
@@ -2320,6 +2335,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             if (initializeBooleanExpressionResult != null)
             {
                 bool expressionResult = (bool)initializeBooleanExpressionResult;
+                //TODO fix for loop on array SOMETIMES WHEN I BECOMES 10 IT CHECKS WITH A NON EXISTING VALUE
                 while (expressionResult)
                 {
                     Visit(context.block());
@@ -2331,7 +2347,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                 
             }
         }
-
         return null;
     }
 }
