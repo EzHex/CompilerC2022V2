@@ -1,18 +1,15 @@
-﻿int a = 1;
-int v = 5;
-bind(a,v);
-a += 5;
-print(a);
-print(v);
-a -= 3;
-print(a);
-print(v);
-a *= 2;
-print(a);
-print(v);
-a /= 20;
-print(a);
-print(v);
-a %= 2;
-print(a);
-print(v);
+﻿int a[11];
+a[0] = 1;
+a[1] = 1;
+a[2] = 2;
+for(int i = 2; i < 11; i++)
+a[i] = a[i-1] + a[i-2];
+forend;
+for(int i = 0; i < 11; i++)
+print(a[i]);
+forend;
+int arnokantrybe = 100;
+while (arnokantrybe > 0)
+arnokantrybe--; //OSAI
+print(arnokantrybe);
+whileend;

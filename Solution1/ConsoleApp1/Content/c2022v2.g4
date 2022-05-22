@@ -12,15 +12,18 @@ line:
 statement: (mathAssignment|assignment|arrayAssignment|funCall|printCall|bindCall|unaryOperation) ';';
 
 mathAssignment: IDENTIFIER (numericAss) expression;
+
 assignment: TYPE? IDENTIFIER '=' expression;
-arrayAssignment: (TYPE IDENTIFIER '[' INTEGER ']') | (IDENTIFIER '[' INTEGER ']' '=' expression);
+
+arrayAssignment: (TYPE IDENTIFIER '[' expression ']') | (IDENTIFIER '[' (expression) ']' '=' expression);
+
 unaryOperation : IDENTIFIER unaryOp;
 
 funCall: TYPE IDENTIFIER '(' (expression (',' expression )*)? ')';
 bindCall : BIND '(' IDENTIFIER (',' IDENTIFIER )+ ')';
 printCall: PRINT '(' expression ')';
 
-ifBlock: 'if' '(' expression ')' block elseifBlock* elseBlock? 'ifend' ';' ;
+ifBlock: 'if' '(' expression ')' block elseifBlock* elseBlock? 'ifend' ';' ; 
 elseifBlock: 'elseif' '(' expression ')' block;
 elseBlock: 'else' block;
 
@@ -34,7 +37,7 @@ expression:
     constant                                #constantExpression
 |   IDENTIFIER                              #identifierExpression
 |   IDENTIFIER unaryOp                      #unaryOpExpression
-|   IDENTIFIER '[' INTEGER ']'              #arrayExp
+|   IDENTIFIER '[' (expression) ']'         #arrayExp
 |   funCall                                 #functionCallExpression
 |   '(' expression ')'                      #parenthesesExpression
 |   '!' expression                          #booleanUnaryExpression

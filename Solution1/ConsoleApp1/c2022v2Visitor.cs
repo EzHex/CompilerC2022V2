@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Reflection;
 using ConsoleApp1.Content;
 
 namespace ConsoleApp1;
@@ -11,6 +12,12 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     struct bindStruct
     {
         public int id;
+        public object? value;
+    }
+
+    struct arrayStruct
+    {
+        public string type;
         public object? value;
     }
 
@@ -1678,46 +1685,129 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             
             
         }
+        else
+        {
+            Console.WriteLine("null");
+        }
         return null;
     }
 
     public override object? VisitArrayAssignment(c2022v2Parser.ArrayAssignmentContext context)
     {
-        var key = context.IDENTIFIER().GetText();
-        var integer = int.Parse(context.INTEGER().GetText());
-        
-        if (!Variables.ContainsKey(key))
+        if (context.TYPE() != null)
         {
-            Variables[key] = new object[integer];
+            var key = context.IDENTIFIER().GetText();
+            var visitedExpression = Visit(context.expression(0));
+            if (visitedExpression != null)
+            {
+                if (visitedExpression.GetType().ToString() == "System.Int32")
+                {
+                    int integer = (int)visitedExpression;
+                    if (!Variables.ContainsKey(key))
+                    {
+                        arrayStruct b = new arrayStruct();
+                        b.type = context.TYPE().GetText();
+                        b.value = new object[integer];
+                        Variables[key] = b;
+                        
+                    }
+                    else
+                    {
+                        throw new Exception("Can't initialize an array that has been previuosly declared");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Expression must be an INTEGER");
+                }
+            }
+            else
+            {
+                throw new Exception("Visited expression doesn't exist");
+            }
         }
         else
         {
-            var value = Variables[key];
-            var arr = value as IEnumerable;
-
-            List<object> temp = new List<object>();
-            
-            if (arr != null)
+            var key = context.IDENTIFIER().GetText();
+            var visitFirstExpression = Visit(context.expression(0));
+            var visitSecondExpression = Visit(context.expression(1));
+            if (Variables.ContainsKey(key))
             {
-                foreach (var variable in arr)
+                var arrayStruct = Variables[key];
+                if (arrayStruct != null)
                 {
-                    temp.Add(variable);
+                    arrayStruct castedArrayStruct = (arrayStruct)arrayStruct;
+                    if (visitFirstExpression != null && visitSecondExpression != null)
+                    {
+                        if (visitFirstExpression.GetType().ToString() == "System.Int32")
+                        {
+                            var arr = castedArrayStruct.value as IEnumerable;
+                            int where = (int)visitFirstExpression;
+                            List<object> temp = new List<object>();
+                            
+                            //Susidedam i temporary array
+                            if (arr != null)
+                            {
+                                foreach (var variable in arr)
+                                {
+                                    temp.Add(variable);
+                                }
+                            }
+
+                            if (where >= temp.Count)
+                            {
+                                throw new IndexOutOfRangeException();
+                            }
+
+                            if (castedArrayStruct.type == "int" &&
+                                visitSecondExpression.GetType().ToString() == "System.Int32")
+                            {
+                                temp[where] = (int)visitSecondExpression;
+                                castedArrayStruct.value = temp.ToArray();
+                                Variables[key] = castedArrayStruct;
+                                return temp[where];
+                            }
+                            else if (castedArrayStruct.type == "double" &&
+                                visitSecondExpression.GetType().ToString() == "System.Double")
+                            {
+                                temp[where] = (double)visitSecondExpression;
+                                castedArrayStruct.value = temp.ToArray();
+                                Variables[key] = castedArrayStruct;
+                                return temp[where];
+                            }
+                            else if (castedArrayStruct.type == "char" &&
+                                visitSecondExpression.GetType().ToString() == "System.Char")
+                            {
+                                temp[where] = (char)visitSecondExpression;
+                                castedArrayStruct.value = temp.ToArray();
+                                Variables[key] = castedArrayStruct;
+                                return temp[where];
+                            }
+                            else
+                            {
+                                throw new Exception(String.Format("The specified variable is not of the array type : \" {0} \" type : {1} needs to be an  : \"{2}\"",visitSecondExpression,visitSecondExpression.GetType(),castedArrayStruct.type));
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("Index must be an integer or an expression which will result in an Integer");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("One of the given expressions is null");
+                    }
+                    
+                }
+                else
+                {
+                    throw new Exception("The structure at the given index is null and can't be reached");
                 }
             }
-
-            var exp = Visit(context.expression());
-            if ( exp != null)
+            else
             {
-                temp[integer] = exp;
-
-                Variables[key] = temp.ToArray();
-                
-                return null;
+                throw new Exception("The specified array/key doesn't exist");
             }
-
-            var toReturn = temp[integer];
-            Console.WriteLine(toReturn.ToString());
-            return integer < temp.Count ? temp[integer].ToString() : null;
         }
 
         return null;
@@ -1726,26 +1816,44 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     public override object? VisitArrayExp(c2022v2Parser.ArrayExpContext context)
     {
         var key = context.IDENTIFIER().GetText();
-        var arr = Variables[key] as IEnumerable;
-        var integer = int.Parse(context.INTEGER().GetText());
-        
-        List<object> temp = new List<object>();
-            
-        if (arr != null)
+        var arrayStruct = Variables[key];
+        var visitExpression = Visit(context.expression());
+        if (visitExpression != null)
         {
-            foreach (var variable in arr)
+            if (arrayStruct != null)
             {
-                temp.Add(variable);
+                var arrayStructCast = (arrayStruct)arrayStruct;
+                var arr = arrayStructCast.value as IEnumerable;
+                var integer = (int)visitExpression;
+
+                List<object> temp = new List<object>();
+
+                //Susidedam i temporary array
+                if (arr != null)
+                {
+                    foreach (var variable in arr)
+                    {
+                        temp.Add(variable);
+                    }
+                }
+
+                if (integer < temp.Count)
+                {
+                    return temp[integer];
+                }
+                else
+                {
+                    throw new IndexOutOfRangeException();
+                }
             }
+            else return null;
         }
-
-        if (integer < temp.Count)
+        else
         {
-            Console.WriteLine(temp[integer]);
-            return null;
+            throw new Exception("Index out of range");
         }
 
-        throw new Exception("Index out of range");
+        return null;
     }
     public override object? VisitIfBlock(c2022v2Parser.IfBlockContext context)
     {
