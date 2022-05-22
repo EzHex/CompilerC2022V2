@@ -1,15 +1,16 @@
-﻿int a[11];
-a[0] = 1;
-a[1] = 1;
-a[2] = 2;
-for(int i = 2; i < 11; i++)
-a[i] = a[i-1] + a[i-2];
-forend;
-for(int i = 0; i < 11; i++)
-print(a[i]);
-forend;
-int arnokantrybe = 100;
-while (arnokantrybe > 0)
-arnokantrybe--; //OSAI
-print(arnokantrybe);
-whileend;
+﻿main:
+int a = 2;
+int b = 3;
+bind(a,b);
+a++;
+print(a);
+print(b);
+a*=3;
+print(a);
+print(b);
+unbind(a,b);
+b++;
+print(a);
+print(b);
+endmain;
+int b = 2;

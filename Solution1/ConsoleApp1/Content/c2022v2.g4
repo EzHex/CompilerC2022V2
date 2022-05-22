@@ -1,13 +1,24 @@
 ﻿grammar c2022v2;
 
-program: line* EOF;
+
+program:'main:' line* 'endmain;' EOF;
 
 line: 
+    mainBlock
+|   funcDeclaration
+;
+
+mainBlock:
     statement
+|   funCall
 |   ifBlock 
 |   forBlock 
 |   whileBlock
 ;
+
+funcDeclaration
+ : 'fun' IDENTIFIER statement* 'endfun'
+ ;
 
 statement: (mathAssignment|assignment|arrayAssignment|funCall|printCall|bindCall|unaryOperation) ';';
 

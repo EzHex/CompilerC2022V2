@@ -227,6 +227,32 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	public virtual void ExitLine([NotNull] c2022v2Parser.LineContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.mainBlock"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterMainBlock([NotNull] c2022v2Parser.MainBlockContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.mainBlock"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitMainBlock([NotNull] c2022v2Parser.MainBlockContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="c2022v2Parser.funcDeclaration"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFuncDeclaration([NotNull] c2022v2Parser.FuncDeclarationContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="c2022v2Parser.funcDeclaration"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFuncDeclaration([NotNull] c2022v2Parser.FuncDeclarationContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="c2022v2Parser.statement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>

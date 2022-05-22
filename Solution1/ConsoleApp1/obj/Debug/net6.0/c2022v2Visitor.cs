@@ -135,6 +135,20 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitLine([NotNull] c2022v2Parser.LineContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.mainBlock"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitMainBlock([NotNull] c2022v2Parser.MainBlockContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="c2022v2Parser.funcDeclaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFuncDeclaration([NotNull] c2022v2Parser.FuncDeclarationContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="c2022v2Parser.statement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
