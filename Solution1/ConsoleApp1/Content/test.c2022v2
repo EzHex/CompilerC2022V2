@@ -21,6 +21,22 @@ endFun;
 
 
 main:
+//Fibonacci using for loop and array
+int array[10];
+int arrayLength = 10;
+array[0] = 0;
+array[1] = 1;
+FibonacciArr(array,arrayLength);
+print(array[arrayLength--]);
+//Fibonacci using recursion
+int a = 0;
+int b = 1;
+int c = 1;
+int startIteration = 2;
+int endIteration = 10 - startIteration;
+int result = 0;
+RecFibbo(a,b,c,startIteration,endIteration,result);
+print(result);
 //NumericAdd tests
 int a = 1;
 double b = 1.10;
