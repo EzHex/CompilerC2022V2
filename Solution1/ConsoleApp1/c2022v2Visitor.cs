@@ -50,12 +50,21 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
     public override object? VisitFunCall(c2022v2Parser.FunCallContext context)
     {
         var startScope = CurrentScope;
-        var funName =context.IDENTIFIER(0).GetText() + "_" + CurrentScope ;
+        var funName = context.IDENTIFIER(0).GetText() + "_" + CurrentScope;
+        if (startScope.StartsWith("main_"))
+        {
+            funName = context.IDENTIFIER(0).GetText() + "_" + CurrentScope;
+        }
+        else
+        {
+            funName = context.IDENTIFIER(0).GetText() + "_" + CurrentScope.Substring(CurrentScope.IndexOf("_")+1);
+        }
+
         if (Funs.ContainsKey(funName))
         {
             var funContext = Funs[funName];
 
-            if (funContext.IDENTIFIER().Length != context.IDENTIFIER().Length)
+            if (funContext.IDENTIFIER().Length != context.IDENTIFIER().Length) 
             {
                 throw new Exception("Fun was called with not enough arguments");
             }
@@ -84,7 +93,8 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             {
                 Variables[startScope + context.IDENTIFIER(i).GetText()] = Variables[$"{funName}{funContext.IDENTIFIER(i).GetText()}"];
             }
-            CurrentScope = CurrentScope.Substring(CurrentScope.IndexOf("_")+1);
+            if(!CurrentScope.StartsWith("main_"))
+                CurrentScope = CurrentScope.Substring(CurrentScope.IndexOf("_")+1);
         }
         else
         {
@@ -2335,7 +2345,6 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             if (initializeBooleanExpressionResult != null)
             {
                 bool expressionResult = (bool)initializeBooleanExpressionResult;
-                //TODO fix for loop on array SOMETIMES WHEN I BECOMES 10 IT CHECKS WITH A NON EXISTING VALUE
                 while (expressionResult)
                 {
                     Visit(context.block());

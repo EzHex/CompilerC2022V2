@@ -29,7 +29,7 @@ arrayAssignment: (TYPE IDENTIFIER '[' expression ']') | (IDENTIFIER '[' (express
 
 unaryOperation : IDENTIFIER unaryOp;
 
-funCall: IDENTIFIER '(' IDENTIFIER (',' IDENTIFIER )? ')';
+funCall: IDENTIFIER '(' (IDENTIFIER (',' IDENTIFIER )*)? ')';
 bindCall : BIND '(' IDENTIFIER (',' IDENTIFIER )+ ')';
 printCall: PRINT '(' expression ')';
 

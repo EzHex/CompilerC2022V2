@@ -1,17 +1,26 @@
 ﻿fun aTimesFive()
-print('a');
+int a = 3;
+print(a);
+aTimesFive();
 endFun;
 
 fun setGToFive ()
 print('w');
 endFun;
 
+fun RecFibbo(a)
+if (a > 5)
+print(a);
+a--;
+RecFibbo(a);
+ifend;
+
+endFun;
 fun FibonacciArr (array , arrayLength)
 for(int i = 2; i < arrayLength; i++)
-print(i);
 array[i] = array[i-1] + array[i-2];
 forend;
-print(array[i]);
+aTimesFive();
 endFun;
 
 
@@ -20,6 +29,7 @@ int a[10];
 a[0] = 1;
 a[1] = 2;
 b=10;
-FibonacciArr(a,b);
-setGToFive();
+RecFibbo(b);
+print(b);
+print(b);
 endMain;
