@@ -50,7 +50,6 @@ expression:
 |   IDENTIFIER '[' (expression) ']'         #arrayExp
 |   funCall                                 #functionCallExpression
 |   '(' expression ')'                      #parenthesesExpression
-|   '!' expression                          #booleanUnaryExpression
 |   expression booleanBinaryOp expression   #booleanBinaryOpExpression
 |   expression numericMultiOp expression    #numericMultiOpExpression
 |   expression numericAddOp expression      #numericAddOpExpression

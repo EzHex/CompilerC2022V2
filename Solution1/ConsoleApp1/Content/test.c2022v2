@@ -1,35 +1,111 @@
-﻿fun aTimesFive()
-int a = 3;
-print(a);
-aTimesFive();
-endFun;
-
-fun setGToFive ()
-print('w');
-endFun;
-
-fun RecFibbo(a)
-if (a > 5)
-print(a);
-a--;
-RecFibbo(a);
+﻿fun RecFibbo(a,b,c,startingIteration,targetIteration,result)
+curr = startingIteration;
+int f = c + b;
+a=b;
+b=c;
+c=f;
+if(curr < targetIteration)
+curr++;
+startingIteration=curr;
+RecFibbo(a,b,c,startingIteration,targetIteration,result);
 ifend;
-
+startingIteration=f;
+result=c;
 endFun;
+
 fun FibonacciArr (array , arrayLength)
 for(int i = 2; i < arrayLength; i++)
 array[i] = array[i-1] + array[i-2];
 forend;
-aTimesFive();
 endFun;
 
 
 main:
-int a[10];
-a[0] = 1;
-a[1] = 2;
-b=10;
-RecFibbo(b);
+//NumericAdd tests
+int a = 1;
+double b = 1.10;
+char c = 'c';
+bool d = true;
+print(a+a);
+print(a+b);
+print(a+c);
+//print(a+d); Can't be done
+print(b+b);
+print(b+c);
+//print(b+d); Can't be done
+print(c+c);
+//print(c+d); Can't be done
+//print(d+d); Can't be done
+//NumericMulti tests
+print('n');
+int a = 1;
+double b = 1.10;
+char c = 'c';
+bool d = true;
+print(a*a);
+print(a*b);
+print(a*c);
+//print(a*d); Can't be done
+print(b*b);
+print(b*c);
+//print(b*d); Can't be done
+print(c*c);
+//print(c*d); Can't be done
+//print(d*d); Can't be done
+//constantExpression test
+print(5);
+print(true);
+print(2.01);
+print('a');
+//identifierExpression test
+print(a);
 print(b);
+print(c);
+print(d);
+//unaryOpExpression
+a++;
+print(a);
+b++;
 print(b);
+c++;
+print(c);
+//d++; Can't be done
+//print(d);
+//unaryOpExpression
+print(a++);
+print(b++);
+print(c++);
+//print(d++);
+//ArrayExpression
+int g[50];
+g[2] = 3;
+print(g[2]);
+//CompExpression
+print(a==a);
+print(a==b);
+print(a==c);
+//print(a==d);
+print(b==b);
+print(b==c);
+//print(b==d);
+print(c==c);
+//print(c==d);
+print(d==d);
+// WhileBlock
+while(a<10)
+print(a);
+a++;
+whileend;
+//ForBlock
+for(int i = 0; i < 3; i++)
+print(i);
+forend;
+//IfElseIfElseBlock
+if(i == 2)
+print(i);
+else if(i < 2)
+print('n');
+else
+print(i++);
+endIf;
 endMain;

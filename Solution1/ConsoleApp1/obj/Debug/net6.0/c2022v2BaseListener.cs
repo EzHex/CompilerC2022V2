@@ -126,21 +126,6 @@ public partial class c2022v2BaseListener : Ic2022v2Listener {
 	public virtual void ExitParenthesesExpression([NotNull] c2022v2Parser.ParenthesesExpressionContext context) { }
 
 	/// <summary>
-	/// Enter a parse tree produced by the <c>booleanUnaryExpression</c>
-	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterBooleanUnaryExpression([NotNull] c2022v2Parser.BooleanUnaryExpressionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by the <c>booleanUnaryExpression</c>
-	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitBooleanUnaryExpression([NotNull] c2022v2Parser.BooleanUnaryExpressionContext context) { }
-
-	/// <summary>
 	/// Enter a parse tree produced by the <c>booleanBinaryOpExpression</c>
 	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
 	/// <para>The default implementation does nothing.</para>

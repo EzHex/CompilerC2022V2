@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Data;
 using System.Reflection;
 using ConsoleApp1.Content;
 
@@ -424,7 +425,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 - (double)val2;
                     }
                 }
-                if (val2.GetType().FullName == "System.Int32")
+                else if (val2.GetType().FullName == "System.Int32")
                 {
                     switch (context.numericAddOp().GetText())
                     {
@@ -433,6 +434,21 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                         case "-" :
                             return (int)val1 - (int)val2;
                     }
+                }
+                else if (val2.GetType().FullName == "System.Char")
+                {
+                    switch (context.numericAddOp().GetText())
+                    {
+                        case "+" :
+                            return (int)val1 + (char)val2;
+                        case "-" :
+                            return (int)val1 - (char)val2;
+                    }
+                }
+                else
+                {
+
+                    throw new Exception(String.Format("Operation cannot be performed on types of : {0} and {1}",val1.GetType().FullName,val2.GetType().FullName));
                 }
                 
             }
@@ -468,6 +484,11 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 - (char)val2;
                     }
                 }
+                else
+                {
+
+                    throw new Exception(String.Format("Operation cannot be performed on types of : {0} and {1}",val1.GetType().FullName,val2.GetType().FullName));
+                }
             }
             else if (val1.GetType().FullName == "System.Char")
             {
@@ -501,10 +522,14 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)((char)val1 - (char)val2);
                     }
                 }
+                else
+                {
+                    throw new Exception(String.Format("Operation cannot be performed on types of : {0} and {1}",val1.GetType().FullName,val2.GetType().FullName));
+                }
             }
             else
             {
-                throw new Exception("Variables stated cannot be added or subtracted");
+                throw new Exception(String.Format("Operation cannot be performed on types of : {0} and {1}",val1.GetType().FullName,val2.GetType().FullName));
             }
         }
         
@@ -1068,7 +1093,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 % (double)val2;
                     }
                 }
-                if (val2.GetType().FullName == "System.Int32")
+                else if (val2.GetType().FullName == "System.Int32")
                 {
                     switch (context.numericMultiOp().GetText())
                     {
@@ -1080,7 +1105,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (int)val1 % (int)val2;
                     }
                 }
-                if (val2.GetType().FullName == "System.Char")
+                else if (val2.GetType().FullName == "System.Char")
                 {
                     switch (context.numericMultiOp().GetText())
                     {
@@ -1091,6 +1116,10 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                         case "%" :
                             return (int)val1 % (char)val2;
                     }
+                }
+                else
+                {
+                    throw new Exception(String.Format("Operation cannot be performed on types of : {0} and {1}",val1.GetType().FullName,val2.GetType().FullName));
                 }
             }
             else if (val1.GetType().FullName == "System.Double")
@@ -1107,7 +1136,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 % (double)val2;
                     }
                 }
-                if (val2.GetType().FullName == "System.Int32")
+                else if (val2.GetType().FullName == "System.Int32")
                 {
                     switch (context.numericMultiOp().GetText())
                     {
@@ -1119,7 +1148,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (double)val1 % (int)val2;
                     }
                 }
-                if (val2.GetType().FullName == "System.Char")
+                else if (val2.GetType().FullName == "System.Char")
                 {
                     switch (context.numericMultiOp().GetText())
                     {
@@ -1130,6 +1159,10 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                         case "%" :
                             return (double)val1 % (char)val2;
                     }
+                }
+                else
+                {
+                    throw new Exception(String.Format("Operation cannot be performed on types of : {0} and {1}",val1.GetType().FullName,val2.GetType().FullName));
                 }
             }
             else if (val1.GetType().FullName == "System.Char")
@@ -1146,7 +1179,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)val1 % (double)val2;
                     }
                 }
-                if (val2.GetType().FullName == "System.Int32")
+                else if (val2.GetType().FullName == "System.Int32")
                 {
                     switch (context.numericMultiOp().GetText())
                     {
@@ -1158,7 +1191,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)val1 % (int)val2;
                     }
                 }
-                if (val2.GetType().FullName == "System.Char")
+                else if (val2.GetType().FullName == "System.Char")
                 {
                     switch (context.numericMultiOp().GetText())
                     {
@@ -1170,10 +1203,14 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             return (char)val1 % (char)val2;
                     }
                 }
+                else
+                {
+                    throw new Exception(String.Format("Operation cannot be performed on types of : {0} and {1}",val1.GetType().FullName,val2.GetType().FullName));
+                }
             }
             else
             {
-                throw new Exception("Variables stated cannot be multiplied or divided");
+                throw new Exception(String.Format("Operation {2} cannot be performed on types of : {0} and {1}",val1.GetType().FullName,val2.GetType().FullName,context.numericMultiOp().GetText()));
             }
         }
 
@@ -1284,6 +1321,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                                 return null;
                         }
                     }
+                    
                 }
                 
                 if (value.GetType().FullName == "System.Double")
@@ -1303,7 +1341,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                     }
                 }
 
-                if (value.GetType().FullName == "System.Int32")
+                else if (value.GetType().FullName == "System.Int32")
                 {
                     switch (context.unaryOp().GetText())
                     {
@@ -1320,7 +1358,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                     }
                 }
 
-                if (value.GetType().FullName == "System.Char")
+                else if (value.GetType().FullName == "System.Char")
                 {
                     switch (context.unaryOp().GetText())
                     {
@@ -1335,6 +1373,10 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                             Variables[identifier] = temp;
                             return temp;
                     }
+                }
+                else
+                {
+                    throw new Exception(String.Format("Unary Operation cannot be performed on types of : {0}",value.GetType().FullName));
                 }
             }
 
@@ -1468,7 +1510,8 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                         return null;
                 }
             }
-            if (value.GetType().FullName == "System.Char")
+            
+            else if (value.GetType().FullName == "System.Char")
             {
                 char temp = (char)value;
                 switch (context.unaryOp().GetText())
@@ -1485,7 +1528,7 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
                         return null;
                 }
             }
-            if (value.GetType().FullName == "System.Double")
+            else if (value.GetType().FullName == "System.Double")
             {
                 double temp = (double)value;
                 switch (context.unaryOp().GetText())
@@ -1504,8 +1547,12 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             }
             else
             {
-                throw new Exception("Can't perform unary on selected type");
+                throw new Exception(String.Format("Operation cannot be performed on types of : {0}",value.GetType().FullName));
             }
+        }
+        else
+        {
+            throw new Exception("Value cannot be null");
         }
 
         return base.VisitUnaryOpExpression(context);
@@ -1947,29 +1994,42 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         var expressResult = Visit(context.expression());
         if (expressResult != null)
         {
-            if ((bool)expressResult)
+            if (expressResult.GetType().ToString() == "System.Boolean")
             {
-                Visit(context.block());
-            }
-            else
-            {
-                foreach (var elsif in context.elseifBlock())
+                if ((bool)expressResult)
                 {
-                    var elsifExpressionResult = Visit(elsif.expression());
-                    if (elsifExpressionResult != null)
+                    Visit(context.block());
+                }
+                else
+                {
+                    foreach (var elsif in context.elseifBlock())
                     {
-                        if ((bool)elsifExpressionResult)
+                        var elsifExpressionResult = Visit(elsif.expression());
+                        if (elsifExpressionResult != null)
                         {
-                            Visit(elsif.block());
-                            return null;
+                            if (elsifExpressionResult.GetType().ToString() == "System.Boolean")
+                            {
+                                if ((bool)elsifExpressionResult)
+                                {
+                                    Visit(elsif.block());
+                                    return null;
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception("Else if statement is not a boolean");
+                            }
                         }
                     }
-                }
-                if (context.elseBlock() is { })
-                {
-                    Visit(context.elseBlock().block());
+
+                    if (context.elseBlock() is { })
+                    {
+                        Visit(context.elseBlock().block());
+                    }
                 }
             }
+            else
+                throw new Exception("Given expression between brackets doesn't return a boolean Value");
         }
 
         return null;
@@ -1980,16 +2040,27 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
         var expressionVisitResult = Visit(context.expression());
         if (expressionVisitResult != null)
         {
-            bool express = (bool)expressionVisitResult;
-            while (express)
+            if (expressionVisitResult.GetType().ToString() == "System.Boolean")
             {
-                Visit(context.block());
-                expressionVisitResult = Visit(context.expression());
-                if (expressionVisitResult != null)
+                bool express = (bool)expressionVisitResult;
+                while (express)
                 {
-                    express = (bool)expressionVisitResult;
+                    Visit(context.block());
+                    expressionVisitResult = Visit(context.expression());
+                    if (expressionVisitResult != null)
+                    {
+                        express = (bool)expressionVisitResult;
+                    }
                 }
             }
+            else
+            {
+                throw new Exception("The given expression in while loop doesn't return a boolean");
+            }
+        }
+        else
+        {
+            throw new Exception("Expression visit result is null");
         }
         return null;
     }
@@ -2344,16 +2415,23 @@ public class C2022V2Visitor : c2022v2BaseVisitor<object?>
             var initializeBooleanExpressionResult = Visit(context.expression(0));
             if (initializeBooleanExpressionResult != null)
             {
-                bool expressionResult = (bool)initializeBooleanExpressionResult;
-                while (expressionResult)
+                if (initializeBooleanExpressionResult.GetType().ToString() == "System.Boolean")
                 {
-                    Visit(context.block());
-                    Visit(context.expression(1));
-                    initializeBooleanExpressionResult = Visit(context.expression(0));
-                    if (initializeBooleanExpressionResult != null)
-                        expressionResult = (bool)initializeBooleanExpressionResult;
+                    bool expressionResult = (bool)initializeBooleanExpressionResult;
+                    while (expressionResult)
+                    {
+                        Visit(context.block());
+                        Visit(context.expression(1));
+                        initializeBooleanExpressionResult = Visit(context.expression(0));
+                        if (initializeBooleanExpressionResult != null)
+                            expressionResult = (bool)initializeBooleanExpressionResult;
+                    }
                 }
-                
+                else
+                {
+                    throw new Exception("Expression must be a boolean");
+                }
+
             }
         }
         return null;

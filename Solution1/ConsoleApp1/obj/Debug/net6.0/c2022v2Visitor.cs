@@ -81,14 +81,6 @@ public interface Ic2022v2Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitParenthesesExpression([NotNull] c2022v2Parser.ParenthesesExpressionContext context);
 
 	/// <summary>
-	/// Visit a parse tree produced by the <c>booleanUnaryExpression</c>
-	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitBooleanUnaryExpression([NotNull] c2022v2Parser.BooleanUnaryExpressionContext context);
-
-	/// <summary>
 	/// Visit a parse tree produced by the <c>booleanBinaryOpExpression</c>
 	/// labeled alternative in <see cref="c2022v2Parser.expression"/>.
 	/// </summary>
