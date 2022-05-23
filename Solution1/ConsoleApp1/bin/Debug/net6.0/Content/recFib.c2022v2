@@ -1,4 +1,4 @@
-﻿fun RecFibbo(a,b,c,startingIteration,targetIteration,result)
+fun RecFibbo(a,b,c,startingIteration,targetIteration,result)
 curr = startingIteration;
 int f = c + b;
 a=b;
@@ -13,22 +13,7 @@ startingIteration=f;
 result=c;
 endFun;
 
-fun FibonacciArr (array , arrayLength)
-for(int i = 2; i < arrayLength; i++)
-array[i] = array[i-1] + array[i-2];
-forend;
-endFun;
-
-
 main:
-
-//Fibonacci using for loop and array
-int array[10];
-int arrayLength = 10;
-array[0] = 0;
-array[1] = 1;
-FibonacciArr(array,arrayLength);
-print(array[arrayLength--]);
 //Fibonacci using recursion
 int a = 0;
 int b = 1;
@@ -38,5 +23,4 @@ int endIteration = 10 - startIteration;
 int result = 0;
 RecFibbo(a,b,c,startIteration,endIteration,result);
 print(result);
-
 endMain;

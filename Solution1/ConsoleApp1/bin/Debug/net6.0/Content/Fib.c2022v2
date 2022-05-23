@@ -1,0 +1,15 @@
+fun FibonacciArr (array , arrayLength)
+for(int i = 2; i < arrayLength; i++)
+array[i] = array[i-1] + array[i-2];
+forend;
+endFun;
+
+main:
+//Fibonacci using for loop and array
+int array[10];
+int arrayLength = 10;
+array[0] = 0;
+array[1] = 1;
+FibonacciArr(array,arrayLength);
+print(array[arrayLength--]);
+endMain;
