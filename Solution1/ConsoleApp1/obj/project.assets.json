@@ -4258,24 +4258,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arnas\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\modes\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\KTUOneDrive\\OneDrive - Kaunas University of Technology\\4pusmetis\\Programavimo kalbų teorija\\Compiler\\CompilerC2022V2\\Solution1\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\modes\\OneDrive\\Stalinis kompiuteris\\New folder\\CompilerC2022V2\\Solution1\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "D:\\KTUOneDrive\\OneDrive - Kaunas University of Technology\\4pusmetis\\Programavimo kalbų teorija\\Compiler\\CompilerC2022V2\\Solution1\\ConsoleApp1\\ConsoleApp1.csproj",
-      "packagesPath": "C:\\Users\\arnas\\.nuget\\packages\\",
-      "outputPath": "D:\\KTUOneDrive\\OneDrive - Kaunas University of Technology\\4pusmetis\\Programavimo kalbų teorija\\Compiler\\CompilerC2022V2\\Solution1\\ConsoleApp1\\obj\\",
+      "projectPath": "C:\\Users\\modes\\OneDrive\\Stalinis kompiuteris\\New folder\\CompilerC2022V2\\Solution1\\ConsoleApp1\\ConsoleApp1.csproj",
+      "packagesPath": "C:\\Users\\modes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\modes\\OneDrive\\Stalinis kompiuteris\\New folder\\CompilerC2022V2\\Solution1\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\arnas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\modes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4328,7 +4323,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

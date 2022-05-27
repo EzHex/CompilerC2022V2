@@ -72,7 +72,7 @@ TYPE: 'int' | 'double' | 'char' | 'bool' | 'void';
 
 INTEGER: [0-9]+;
 DOUBLE: [0-9]+ '.' [0-9]+;
-CHAR: '\''[a-zA-Z]'\'';
+CHAR: '\''[a-zA-Z+-]'\'';
 BOOL: 'true' | 'false';
 NULL: 'null';
 
